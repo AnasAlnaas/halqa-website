@@ -1,0 +1,17 @@
+{
+  "name": "Halqa — Arabic, Qur'an & Seerah lessons",
+  "short_name": "Halqa",
+  "description": "Private and small-group online lessons in Arabic, Qur'an recitation and the Seerah of the Prophet ﷺ.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f8f8",
+  "theme_color": "#006071",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

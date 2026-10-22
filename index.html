@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Halqa — Learn Arabic, Qur'an &amp; the Seerah with Anas</title>
+<meta name="description" content="Private and small-group online lessons in Arabic, Qur'an recitation and Tajweed, and the Seerah of the Prophet ﷺ. Native Arabic teacher, 300+ students taught, rated 5.0 on Preply. Free trial lesson.">
+<link rel="canonical" href="https://www.halqa.ly/">
+<meta name="theme-color" content="#006071" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1a1e" media="(prefers-color-scheme: dark)">
+<meta name="author" content="Anas — Halqa">
+
+<!-- Link previews (WhatsApp, Telegram, Facebook, X) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Halqa">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_LY">
+<meta property="og:url" content="https://www.halqa.ly/">
+<meta property="og:title" content="Halqa — Learn Arabic, Qur'an &amp; the Seerah with Anas">
+<meta property="og:description" content="Private and small-group online lessons in Arabic, Qur'an recitation and Tajweed, and the Seerah of the Prophet ﷺ. 300+ students taught, rated 5.0 on Preply. First lesson free.">
+<meta property="og:image" content="https://www.halqa.ly/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Anas teaching Arabic script from an early Qur'anic manuscript">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Icons -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Fonts are self-hosted; nothing is requested from a third party at runtime -->
+<link rel="preload" href="fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/sourceserif4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+
+<script>
+  /* Runs before paint: marks that JS is available (the reveal animations are
+     scoped to html.js so the page is never invisible without it), and restores
+     a saved Arabic preference and a saved light/dark choice before the first
+     frame — otherwise the page flashes English, or flashes light before
+     turning dark. With nothing saved, the theme follows the operating system. */
+  (function () {
+    var d = document.documentElement;
+    d.classList.remove('no-js');
+    d.classList.add('js');
+    try {
+      if (localStorage.getItem('halqa:lang') === 'ar') {
+        d.setAttribute('lang', 'ar');
+        d.setAttribute('dir', 'rtl');
+      }
+      var theme = localStorage.getItem('halqa:theme');
+      if (theme !== 'dark' && theme !== 'light') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light';
+      }
+      d.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.halqa.ly/#website",
+      "url": "https://www.halqa.ly/",
+      "name": "Halqa",
+      "inLanguage": ["en", "ar"],
+      "publisher": { "@id": "https://www.halqa.ly/#org" }
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://www.halqa.ly/#org",
+      "name": "Halqa",
+      "alternateName": "حلقة",
+      "url": "https://www.halqa.ly/",
+      "logo": "https://www.halqa.ly/favicon.svg",
+      "image": "https://www.halqa.ly/images/og.jpg",
+      "description": "Online Arabic, Qur'an recitation and Seerah lessons for non-Arabic speakers, taught privately and in small live groups.",
+      "founder": { "@id": "https://www.halqa.ly/#anas" },
+      "address": { "@type": "PostalAddress", "addressCountry": "LY" },
+      "areaServed": "Worldwide",
+      "availableLanguage": ["Arabic", "English"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.halqa.ly/#anas",
+      "name": "Anas",
+      "jobTitle": "Arabic, Qur'an and Islamic Studies teacher",
+      "description": "Native Arabic teacher who has taught more than 300 students online and in classrooms.",
+      "image": "https://www.halqa.ly/images/portrait.webp",
+      "knowsLanguage": ["ar", "en"],
+      "worksFor": { "@id": "https://www.halqa.ly/#org" },
+      "knowsAbout": [
+        "Arabic language teaching",
+        "Qur'an recitation",
+        "Tajweed",
+        "Seerah of the Prophet Muhammad",
+        "Islamic Studies"
+      ]
+    },
+    {
+      "@type": "Course",
+      "name": "Arabic for Non-Arabic Speakers",
+      "description": "Speaking, listening and reading Arabic from beginner level upwards, taught privately or in a small group.",
+      "inLanguage": "en",
+      "teaches": "Arabic language",
+      "provider": { "@id": "https://www.halqa.ly/#org" },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "instructor": { "@id": "https://www.halqa.ly/#anas" }
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Reading and Writing in Arabic",
+      "description": "The Arabic alphabet, letter forms and vowel marks, through to reading vocalised text with confidence.",
+      "inLanguage": "en",
+      "teaches": "Arabic reading and writing",
+      "provider": { "@id": "https://www.halqa.ly/#org" },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "instructor": { "@id": "https://www.halqa.ly/#anas" }
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Qur'an Recitation and Tajweed for Kids",
+      "description": "Recitation lessons for children aged 6 to 14, with the rules of Tajweed taught by ear and example.",
+      "inLanguage": "en",
+      "teaches": "Qur'an recitation and Tajweed",
+      "provider": { "@id": "https://www.halqa.ly/#org" },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "instructor": { "@id": "https://www.halqa.ly/#anas" }
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Seerah of the Prophet Muhammad ﷺ",
+      "description": "The life of the Prophet ﷺ taught as one continuous story with its historical context, currently running as a weekly live group.",
+      "inLanguage": "en",
+      "teaches": "Islamic Studies and the Sira",
+      "provider": { "@id": "https://www.halqa.ly/#org" },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseSchedule": {
+          "@type": "Schedule",
+          "repeatFrequency": "P1W",
+          "repeatCount": 1
+        },
+        "instructor": { "@id": "https://www.halqa.ly/#anas" }
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "The Prophetic Day",
+      "description": "A day in the life of the Prophet ﷺ from waking to sleeping — his worship, manners and habits — and how to shape an ordinary day around them. New group starting October 2026.",
+      "inLanguage": "en",
+      "teaches": "Prophetic practice and daily routine",
+      "provider": { "@id": "https://www.halqa.ly/#org" },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "startDate": "2026-10",
+        "instructor": { "@id": "https://www.halqa.ly/#anas" }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need any Arabic to start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Several of my students began at the alphabet. Lessons are taught in English and shift into more Arabic as you grow into it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long is a lesson?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually 45 to 60 minutes for adults and 30 to 45 for children. We adjust once we both see what holds attention and what does not."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the first lesson really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The first short session is a trial: we check your level, talk through your goal, and agree on a plan. You decide afterwards whether to continue."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I need for a lesson?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A phone or laptop with a stable connection, and something to write in. Any material you need is sent to you before we meet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which platform do we meet on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google Meet, or the Preply classroom — those two for now. Booking through Preply keeps the scheduling and the payment in one place."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I book lessons for my child?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — and not only the recitation course. Every course here is built to work for young learners, with the pace, the examples and the length of the session adjusted to their age. Parents are welcome to sit in on the first lessons."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What times are you available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "I teach across a wide spread of hours, from early morning through to late evening. Send me your city or your timezone and I will send back the slots that work."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main" data-i18n="skip.link">Skip to main content</a>
+
+<!-- ==========================================================================
+     Icon sprite. Replaces the 100 KB Font Awesome stylesheet the old site
+     loaded from a CDN for a dozen glyphs. Add an icon by adding a <symbol>.
+     ========================================================================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l4.8 4.8L19.5 7"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 6v12M6 12h12"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12h14M12.5 6l6 6-6 6"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 4.5H4.5V9.5M14.5 4.5h5v5M14.5 19.5h5v-5M9.5 19.5H4.5v-5"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5L8 12l6.5 6.5"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 5.5L16 12l-6.5 6.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.4V12l3.2 2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15.2 19.5v-1.7a3.4 3.4 0 00-3.4-3.4H7.3a3.4 3.4 0 00-3.4 3.4v1.7"/><circle cx="9.55" cy="7.6" r="3.1"/><path d="M20.1 19.5v-1.7a3.4 3.4 0 00-2.6-3.3M15.4 4.7a3.1 3.1 0 010 5.9"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18.5 19.5v-1.8a4 4 0 00-4-4h-5a4 4 0 00-4 4v1.8"/><circle cx="12" cy="7.7" r="3.7"/></symbol>
+  <symbol id="i-level" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M5.5 19v-4.5M12 19V9.5M18.5 19V5"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.6" y="6.2" width="16.8" height="14.2" rx="2"/><path d="M8.2 3.4v4M15.8 3.4v4M3.6 11h16.8"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.4"/><path d="M8.9 13.7l-1.2 6.9 4.3-2.4 4.3 2.4-1.2-6.9"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.6C10.4 5.2 8.4 4.6 5 4.6v13c3.4 0 5.4.6 7 2 1.6-1.4 3.6-2 7-2v-13c-3.4 0-5.4.6-7 2z"/><path d="M12 6.6v12.4"/></symbol>
+  <symbol id="i-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.3l2.4 1.5 2.8-.2.9 2.7 2.3 1.6-.9 2.7.9 2.7-2.3 1.6-.9 2.7-2.8-.2L12 20.7l-2.4-1.5-2.8.2-.9-2.7-2.3-1.6.9-2.7-.9-2.7 2.3-1.6.9-2.7 2.8.2z"/><path d="M9.2 12.1l2 2 3.6-3.9"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.3M12 19.1v2.3M4.36 4.36l1.63 1.63M18.01 18.01l1.63 1.63M2.6 12h2.3M19.1 12h2.3M4.36 19.64l1.63-1.63M18.01 5.99l1.63-1.63"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.4 14.6A8.8 8.8 0 019.4 3.6a8.8 8.8 0 1011 11z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l2.85 5.94 6.5.88-4.72 4.53 1.17 6.45L12 17.32l-5.8 3.08 1.17-6.45L2.65 9.42l6.5-.88z"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.1L2.6 8.6 12 13.1l9.4-4.5z"/><path d="M6.3 11v4.4c0 1.7 2.55 2.9 5.7 2.9s5.7-1.2 5.7-2.9V11"/></symbol>
+  <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.347-.347.52-.52.174-.174.232-.298.347-.497.115-.198.057-.371-.058-.52-.115-.148-.669-1.612-.916-2.207-.245-.595-.49-.51-.67-.51-.174 0-.372-.024-.57-.024-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+  <symbol id="i-telegram" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.26-1.91.178-.184 3.147-2.886 3.207-3.14.007-.03.014-.135-.055-.19-.069-.055-.169-.037-.242-.02-.104.024-1.755 1.115-4.954 3.274-.47.322-.897.48-1.277.47-.42-.009-1.23-.238-1.83-.434-.74-.24-1.324-.365-1.273-.767.026-.21.315-.424.867-.643 3.398-1.48 5.664-2.456 6.798-2.927 3.237-1.346 3.91-1.58 4.35-1.588z"/></symbol>
+</svg>
+
+<!-- ==========================================================================
+     Header
+     ========================================================================== -->
+<header class="header">
+  <div class="container header__inner">
+
+    <a class="brand" href="#" aria-label="Halqa — home">
+      <img class="brand__mark" src="favicon.svg" width="34" height="34" alt="">
+      <span class="brand__name">Halqa</span>
+      <span class="brand__name-ar" aria-hidden="true">حَلْقَة</span>
+    </a>
+
+    <nav class="nav header__nav" id="site-nav" aria-label="Main">
+      <a class="nav__link" href="#courses" data-i18n="nav.courses">Courses</a>
+      <a class="nav__link" href="#formats" data-i18n="nav.formats">Groups &amp; private</a>
+      <a class="nav__link" href="#about" data-i18n="nav.about">About</a>
+      <a class="nav__link" href="#gallery" data-i18n="nav.gallery">Gallery</a>
+      <a class="nav__link" href="#reviews" data-i18n="nav.reviews">Reviews</a>
+      <a class="nav__link" href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a class="btn btn--primary btn--sm" href="#contact" data-i18n="nav.book">Book a lesson</a>
+    </nav>
+
+    <div class="header__actions">
+      <div class="lang-toggle" role="group" aria-label="Site language" data-i18n-attr="aria-label:lang.label">
+        <button type="button" data-set-lang="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-set-lang="ar" aria-pressed="false" lang="ar">ع</button>
+      </div>
+
+      <button class="icon-btn icon-btn--theme theme-toggle" type="button"
+              aria-label="Switch to dark theme" data-i18n-attr="aria-label:theme.toDark">
+        <svg class="icon theme-toggle__moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+        <svg class="icon theme-toggle__sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+      </button>
+
+      <a class="btn btn--primary btn--sm header__cta-desktop" href="#contact" data-i18n="nav.book">Book a lesson</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+              aria-label="Open menu" data-i18n-attr="aria-label:nav.menuLabel">
+        <svg class="icon nav-toggle__open" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon nav-toggle__close" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ========================================================================
+       Hero
+       ======================================================================== -->
+  <section class="hero">
+    <div class="container hero__inner">
+
+      <div>
+        <span class="eyebrow" data-i18n="hero.eyebrow">Arabic · Qur'an · Seerah — taught online</span>
+
+        <h1 class="hero__title">
+          <span class="hero__title-ar" aria-hidden="true">حَلْقَة</span>
+          <span data-i18n="hero.title">Learn Arabic and the Seerah of the Prophet ﷺ with a teacher beside you</span>
+        </h1>
+
+        <p class="hero__sub" data-i18n="hero.sub">
+          Private one-to-one lessons and small live groups for non-Arabic speakers. Every course is
+          shaped around your level, your goal and your pace.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn btn--whatsapp" data-msg="trial"
+             href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20book%20a%20free%20trial%20lesson.">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            <span data-i18n="hero.ctaPrimary">Book a free trial lesson</span>
+          </a>
+          <a class="btn btn--ghost" href="#courses">
+            <span data-i18n="hero.ctaSecondary">See the courses</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg>
+          </a>
+        </div>
+
+        <p class="hero__note" data-i18n="hero.note">
+          Lessons in English or Arabic · Based in Libya (UTC+2) · Usually replies within a few hours
+        </p>
+      </div>
+
+      <figure class="hero__figure">
+        <img class="hero__portrait" src="images/portrait.webp"
+             srcset="images/portrait.webp 640w, images/portrait@2x.webp 960w"
+             sizes="(min-width: 900px) 380px, min(100vw - 2rem, 380px)"
+             width="640" height="640"
+             alt="Anas, Arabic and Islamic studies teacher" data-i18n-attr="alt:hero.portraitAlt"
+             fetchpriority="high" decoding="async">
+        <figcaption class="hero__rating">
+          <svg class="icon" aria-hidden="true" style="width:1.1rem;height:1.1rem;color:var(--gold)"><use href="#i-star"></use></svg>
+          <span>
+            <strong data-i18n="hero.ratingValue">5.0</strong>
+            <span data-i18n="hero.ratingLabel">rated on Preply</span>
+          </span>
+        </figcaption>
+      </figure>
+
+    </div>
+
+    <div class="container">
+      <ul class="trust">
+        <li class="trust__item">
+          <strong class="trust__value">300+</strong>
+          <span class="trust__label" data-i18n="trust.students">Students taught</span>
+        </li>
+        <li class="trust__item">
+          <strong class="trust__value">82</strong>
+          <span class="trust__label" data-i18n="trust.lessons">Lessons on Preply</span>
+        </li>
+        <li class="trust__item">
+          <strong class="trust__value">5.0</strong>
+          <span class="trust__label" data-i18n="trust.rating">Average rating</span>
+        </li>
+        <li class="trust__item">
+          <strong class="trust__value" data-i18n="trust.native">Native</strong>
+          <span class="trust__label" data-i18n="trust.nativeLabel">Arabic speaker</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       What is running now
+       ======================================================================== -->
+  <section class="section section--surface" id="now">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="now.eyebrow">Happening now</span>
+        <h2 data-i18n="now.title">Two courses on the calendar</h2>
+        <p class="lede" data-i18n="now.lede">
+          One halqa is running right now, and a new one opens in October. Both are also available as
+          private lessons whenever suits you.
+        </p>
+      </div>
+
+      <div class="grid featured reveal">
+
+        <article class="featured__card featured__card--live">
+          <div class="featured__head">
+            <h3 class="featured__title" data-i18n="now.sirahTitle">Seerah of the Prophet ﷺ</h3>
+            <span class="badge badge--live" data-i18n="now.liveBadge">Ongoing now</span>
+          </div>
+          <p data-i18n="now.sirahText">
+            We are moving through the life of the Prophet ﷺ session by session — Makkah, the Hijrah,
+            Madinah — with the context behind each event and what it asks of us.
+          </p>
+          <ul class="featured__list">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>
+              <span data-i18n="now.sirahP1">Live small group, one session a week — message me and I will send you a time that suits you</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span data-i18n="now.sirahP2">You can join the halqa that is already running</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg>
+              <span data-i18n="now.sirahP3">Catch-up notes if you miss a session</span>
+            </li>
+          </ul>
+          <a class="btn btn--primary" data-msg="sirah"
+             href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20join%20the%20Seerah%20halqa%20that%20is%20running%20now.">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            <span data-i18n="now.sirahCta">Join the running halqa</span>
+          </a>
+        </article>
+
+        <article class="featured__card featured__card--soon">
+          <div class="featured__head">
+            <h3 class="featured__title" data-i18n="now.dayTitle">The Prophetic Day</h3>
+            <span class="badge badge--soon" data-i18n="now.soonBadge">Starting October 2026</span>
+          </div>
+          <p data-i18n="now.dayText">
+            A day in the life of the Prophet ﷺ from waking to sleeping — his worship, his manners,
+            his habits — and how to bring that shape into your own day.
+          </p>
+          <ul class="featured__list">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>
+              <span data-i18n="now.dayP1">A new group opens in October 2026, in shā’ Allāh</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span data-i18n="now.dayP2">Seats are reserved in advance</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>
+              <span data-i18n="now.dayP3">Booking early gets first choice of times</span>
+            </li>
+          </ul>
+          <a class="btn btn--ghost" data-msg="day"
+             href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20reserve%20a%20seat%20on%20The%20Prophetic%20Day%20course%20in%20October.">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+            <span data-i18n="now.dayCta">Reserve a seat</span>
+          </a>
+        </article>
+
+      </div>
+
+      <p class="hero__note reveal" style="margin-block-start:1.5rem" data-i18n="now.privateNote">
+        Prefer to study alone? Every course here can be taught one-to-one, starting any week of the year.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Courses
+       Each card's artwork is an Arabic word set in Amiri. Swap a
+       .card__media--glyph block for an <img> once you have a photo for it —
+       see IMAGES.md.
+       ======================================================================== -->
+  <section class="section" id="courses">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="courses.eyebrow">What I teach</span>
+        <h2 data-i18n="courses.title">Courses</h2>
+        <p class="lede" data-i18n="courses.lede">
+          Five courses, each available privately or in a small group. If what you want is not listed,
+          ask — most students end up with something built for them.
+        </p>
+      </div>
+
+      <div class="grid courses-grid">
+
+        <article class="card reveal">
+          <div class="card__media card__media--glyph">
+            <span class="card__glyph" aria-hidden="true">العَرَبِيَّة</span>
+            <span class="badge badge--open card__badge" data-i18n="courses.openBadge">Open for booking</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title" data-i18n="course.arabic.title">Arabic for Non-Arabic Speakers</h3>
+            <p class="card__text" data-i18n="course.arabic.text">
+              Speak, listen and build real Arabic from zero, or from wherever you stopped. Grammar comes
+              in only as far as it serves you actually using the language.
+            </p>
+            <ul class="card__meta">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-level"></use></svg><span data-i18n="course.arabic.m1">All levels</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg><span data-i18n="course.arabic.m2">Private or group</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg><span data-i18n="course.arabic.m3">45–60 min</span></li>
+            </ul>
+            <div class="card__foot">
+              <p class="price" data-course="arabic" data-i18n="price.ask">Pricing on request</p>
+              <a class="btn btn--ghost btn--sm" data-msg="arabic"
+                 href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20the%20Arabic%20course%20for%20non-Arabic%20speakers."
+                 data-i18n="courses.bookCta">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__media card__media--glyph">
+            <span class="card__glyph" aria-hidden="true">الكِتَابَة</span>
+            <span class="badge badge--open card__badge" data-i18n="courses.openBadge">Open for booking</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title" data-i18n="course.writing.title">Reading &amp; Writing in Arabic</h3>
+            <p class="card__text" data-i18n="course.writing.text">
+              The alphabet, the letter shapes, the vowel marks — then real reading with tashkeel, until
+              the script stops looking like decoration and starts being words.
+            </p>
+            <ul class="card__meta">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-level"></use></svg><span data-i18n="course.writing.m1">Beginner</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg><span data-i18n="course.writing.m2">Private or group</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg><span data-i18n="course.writing.m3">45 min</span></li>
+            </ul>
+            <div class="card__foot">
+              <p class="price" data-course="writing" data-i18n="price.ask">Pricing on request</p>
+              <a class="btn btn--ghost btn--sm" data-msg="writing"
+                 href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20the%20Arabic%20reading%20and%20writing%20course."
+                 data-i18n="courses.bookCta">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__media card__media--glyph">
+            <span class="card__glyph" aria-hidden="true">التِّلَاوَة</span>
+            <span class="badge badge--open card__badge" data-i18n="courses.openBadge">Open for booking</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title" data-i18n="course.quran.title">Qur'an Recitation &amp; Tajweed for Kids</h3>
+            <p class="card__text" data-i18n="course.quran.text">
+              Patient recitation lessons for children, with the rules of Tajweed taught by ear and by
+              example rather than as a list to memorise.
+            </p>
+            <ul class="card__meta">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-level"></use></svg><span data-i18n="course.quran.m1">Ages 6–14</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg><span data-i18n="course.quran.m2">Private</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg><span data-i18n="course.quran.m3">30–45 min</span></li>
+            </ul>
+            <div class="card__foot">
+              <p class="price" data-course="quran" data-i18n="price.ask">Pricing on request</p>
+              <a class="btn btn--ghost btn--sm" data-msg="quran"
+                 href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20Qur'an%20recitation%20lessons%20for%20children."
+                 data-i18n="courses.bookCta">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__media card__media--glyph">
+            <span class="card__glyph" aria-hidden="true">السِّيرَة</span>
+            <span class="badge badge--live card__badge" data-i18n="now.liveBadge">Ongoing now</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title" data-i18n="course.sirah.title">Seerah of the Prophet ﷺ</h3>
+            <p class="card__text" data-i18n="course.sirah.text">
+              The life of the Prophet ﷺ told as one continuous story, with the history around it kept
+              intact. Currently running as a weekly group.
+            </p>
+            <ul class="card__meta">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-level"></use></svg><span data-i18n="course.sirah.m1">All levels</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg><span data-i18n="course.sirah.m2">Group or private</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span data-i18n="course.sirah.m3">Weekly</span></li>
+            </ul>
+            <div class="card__foot">
+              <p class="price" data-course="sirah" data-i18n="price.ask">Pricing on request</p>
+              <a class="btn btn--ghost btn--sm" data-msg="sirah"
+                 href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20join%20the%20Seerah%20halqa%20that%20is%20running%20now."
+                 data-i18n="courses.bookCta">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__media card__media--glyph">
+            <span class="card__glyph card__glyph--long" aria-hidden="true">اليَوْمُ النَّبَوِي</span>
+            <span class="badge badge--soon card__badge" data-i18n="now.soonBadge">Starting October 2026</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title" data-i18n="course.day.title">The Prophetic Day</h3>
+            <p class="card__text" data-i18n="course.day.text">
+              His day from morning to night — worship, manners, work, rest — and the practical shape it
+              gives to an ordinary day now.
+            </p>
+            <ul class="card__meta">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-level"></use></svg><span data-i18n="course.day.m1">All levels</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg><span data-i18n="course.day.m2">Group or private</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span data-i18n="course.day.m3">From October</span></li>
+            </ul>
+            <div class="card__foot">
+              <p class="price" data-course="day" data-i18n="price.ask">Pricing on request</p>
+              <a class="btn btn--ghost btn--sm" data-msg="day"
+                 href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20reserve%20a%20seat%20on%20The%20Prophetic%20Day%20course%20in%20October."
+                 data-i18n="courses.bookCta">Book</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Groups vs private
+       ======================================================================== -->
+  <section class="section section--tint" id="formats">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="formats.eyebrow">Two ways to study</span>
+        <h2 data-i18n="formats.title">A weekly group, or the hour entirely to yourself</h2>
+        <p class="lede" data-i18n="formats.lede">
+          I teach ongoing groups and I take private students. Neither is the fallback for the other —
+          they suit different people, and some students do both.
+        </p>
+      </div>
+
+      <div class="split split--2 reveal">
+
+        <div class="panel">
+          <div class="panel__icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>
+          </div>
+          <h3 data-i18n="formats.groupTitle">Live small groups</h3>
+          <p data-i18n="formats.groupText">
+            You learn alongside a handful of other students in a fixed weekly halqa. Questions get
+            asked out loud, and the group keeps everyone moving.
+          </p>
+          <ul class="check-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="formats.groupP1">Lower price per session</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="formats.groupP2">A fixed weekly rhythm that is easy to keep</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="formats.groupP3">You learn from other students' questions too</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="formats.groupP4">Running now: the Seerah halqa</span></li>
+          </ul>
+          <div class="btn-row" style="margin-block-start:1.5rem">
+            <a class="btn btn--ghost btn--sm" data-msg="group"
+               href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20the%20group%20lessons."
+               data-i18n="formats.groupCta">Ask about the group</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+          </div>
+          <h3 data-i18n="formats.privateTitle">Private one-to-one</h3>
+          <p data-i18n="formats.privateText">
+            The whole session is yours. We set the pace, the times and the syllabus around you, and you
+            can start in any week of the year.
+          </p>
+          <ul class="check-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="formats.privateP1">Times chosen around your timezone</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="formats.privateP2">A syllabus built on your specific goal</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="formats.privateP3">Move as fast, or as slowly, as you need</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span data-i18n="formats.privateP4">Available for every course on this page</span></li>
+          </ul>
+          <div class="btn-row" style="margin-block-start:1.5rem">
+            <a class="btn btn--ghost btn--sm" data-msg="private"
+               href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20private%20one-to-one%20lessons."
+               data-i18n="formats.privateCta">Ask about private lessons</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       About
+       ======================================================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="split split--about">
+
+        <figure class="about__figure reveal">
+          <img src="images/about.webp" width="1280" height="960" loading="lazy" decoding="async"
+               alt="Anas teaching at a smartboard showing an early Kufic Qur'an manuscript, with two students watching"
+               data-i18n-attr="alt:about.figAlt">
+          <figcaption data-i18n="about.figCaption">
+            Teaching الكتابة — the shape of early Kufic script — from an original manuscript.
+          </figcaption>
+        </figure>
+
+        <div class="reveal">
+          <span class="eyebrow" data-i18n="about.eyebrow">Your teacher</span>
+          <h2 data-i18n="about.title">Anas</h2>
+          <p class="lede" data-i18n="about.role">Arabic, Qur'an, Islamic Studies and Sira</p>
+          <p style="margin-block-start:1.25rem" data-i18n="about.text">
+            I have taught more than 300 students — on Preply, on other platforms, and in real classrooms
+            with a blackboard, notebooks and children sitting on the carpet. I teach Arabic, Qur'an
+            recitation, Islamic Studies and the Sira. What I care about is that a lesson lands: that you
+            leave it able to do something you could not do an hour earlier.
+          </p>
+
+          <ul class="creds">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-verified"></use></svg>
+              <div>
+                <strong data-i18n="about.c1">Certified native Arabic tutor</strong>
+                <span data-i18n="about.c1sub">Arabic is my first language, and teaching it to non-native speakers is what I do every week.</span>
+              </div>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg>
+              <div>
+                <strong data-i18n="about.c2">Qur'an recitation &amp; Tajweed</strong>
+                <span data-i18n="about.c2sub">The rules of Tajweed explained so that someone who does not speak Arabic can still hear them and copy them.</span>
+              </div>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-cap"></use></svg>
+              <div>
+                <strong data-i18n="about.c3">Islamic Studies &amp; Sira</strong>
+                <span data-i18n="about.c3sub">The life of the Prophet ﷺ and the history surrounding it, taught as a story with its context kept in place.</span>
+              </div>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>
+              <div>
+                <strong data-i18n="about.c4">Interactive by default</strong>
+                <span data-i18n="about.c4sub">Boards, images, manuscripts and questions — not a lecture read out loud at you.</span>
+              </div>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-award"></use></svg>
+              <div>
+                <strong data-i18n="about.c5">5.0 on Preply across 82 lessons</strong>
+                <span data-i18n="about.c5sub">Part of more than 300 students taught in total, between online platforms and real classrooms.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       How it works
+       ======================================================================== -->
+  <section class="section section--surface">
+    <div class="container">
+
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow" data-i18n="how.eyebrow">How it works</span>
+        <h2 data-i18n="how.title">From a message to your first lesson</h2>
+      </div>
+
+      <div class="grid steps reveal">
+        <div class="step">
+          <h3 data-i18n="how.s1">Send a message</h3>
+          <p data-i18n="how.s1text">WhatsApp or Telegram, in English or Arabic. Tell me what you want to learn and roughly where you are now.</p>
+        </div>
+        <div class="step">
+          <h3 data-i18n="how.s2">Take a free trial</h3>
+          <p data-i18n="how.s2text">We meet for a short first session, find your real level, and agree on a plan. Nothing to pay for this one.</p>
+        </div>
+        <div class="step">
+          <h3 data-i18n="how.s3">Pick your times</h3>
+          <p data-i18n="how.s3text">A fixed weekly slot if you join a group, or times chosen around your timezone if you study privately.</p>
+        </div>
+        <div class="step">
+          <h3 data-i18n="how.s4">Start, and keep going</h3>
+          <p data-i18n="how.s4text">You get the material after each session, and we keep track of what has been covered so nothing quietly gets lost.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Gallery
+       Captions are always visible, and each tile opens a larger copy. Add a
+       photo by copying one <figure> block — see IMAGES.md.
+       ======================================================================== -->
+  <section class="section" id="gallery">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="gallery.eyebrow">From the classroom</span>
+        <h2 data-i18n="gallery.title">Moments of learning</h2>
+        <p class="lede" data-i18n="gallery.lede">
+          Real sessions — a blackboard, open notebooks, a manuscript on the screen, children on the carpet.
+        </p>
+      </div>
+
+      <div class="grid gallery reveal">
+
+        <!-- A live Sirah session. This is a 2:1 screenshot rather than a 4:3
+             photo, so it takes a double-width tile at its own aspect ratio — a
+             4:3 crop would cut away a third of it. It leads the gallery because
+             a wide item placed last leaves a hole in the middle of the grid. -->
+        <figure class="gallery__item gallery__item--wide">
+          <button class="gallery__btn" type="button" data-large="images/gallery-6-large.webp">
+            <span class="gallery__frame">
+              <img src="images/gallery-6.webp" width="1200" height="576" loading="lazy" decoding="async"
+                   alt="A live online Sirah session: the shared slide reads 'His support for the Prophet ﷺ' above an illustration of an old Arabian town, with students' video tiles alongside"
+                   data-i18n-attr="alt:g6.alt">
+              <span class="visually-hidden" data-i18n="gallery.openLabel">Open larger</span>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg class="icon"><use href="#i-expand"></use></svg>
+              </span>
+            </span>
+          </button>
+        </figure>
+
+        <figure class="gallery__item">
+          <button class="gallery__btn" type="button" data-large="images/gallery-1-large.webp">
+            <span class="gallery__frame">
+              <img src="images/gallery-1.webp" width="800" height="600" loading="lazy" decoding="async"
+                   alt="Teacher at a smartboard displaying an early Kufic Qur'an manuscript, two students seated in front"
+                   data-i18n-attr="alt:g1.alt">
+              <span class="visually-hidden" data-i18n="gallery.openLabel">Open larger</span>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg class="icon"><use href="#i-expand"></use></svg>
+              </span>
+            </span>
+          </button>
+        </figure>
+
+        <figure class="gallery__item">
+          <button class="gallery__btn" type="button" data-large="images/gallery-2-large.webp">
+            <span class="gallery__frame">
+              <img src="images/gallery-2.webp" width="800" height="600" loading="lazy" decoding="async"
+                   alt="Blackboard with a chalk diagram of the Night Journey showing the seven heavens labelled in Arabic"
+                   data-i18n-attr="alt:g2.alt">
+              <span class="visually-hidden" data-i18n="gallery.openLabel">Open larger</span>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg class="icon"><use href="#i-expand"></use></svg>
+              </span>
+            </span>
+          </button>
+        </figure>
+
+        <figure class="gallery__item">
+          <button class="gallery__btn" type="button" data-large="images/gallery-3-large.webp">
+            <span class="gallery__frame">
+              <img src="images/gallery-3.webp" width="800" height="600" loading="lazy" decoding="async"
+                   alt="The words al-Sirah al-Nabawiyyah written in chalk on a blackboard"
+                   data-i18n-attr="alt:g3.alt">
+              <span class="visually-hidden" data-i18n="gallery.openLabel">Open larger</span>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg class="icon"><use href="#i-expand"></use></svg>
+              </span>
+            </span>
+          </button>
+        </figure>
+
+        <figure class="gallery__item">
+          <button class="gallery__btn" type="button" data-large="images/gallery-4-large.webp">
+            <span class="gallery__frame">
+              <img src="images/gallery-4.webp" width="800" height="484" loading="lazy" decoding="async"
+                   alt="Children sitting on a patterned carpet with open notebooks, practising Arabic writing"
+                   data-i18n-attr="alt:g4.alt">
+              <span class="visually-hidden" data-i18n="gallery.openLabel">Open larger</span>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg class="icon"><use href="#i-expand"></use></svg>
+              </span>
+            </span>
+          </button>
+        </figure>
+
+        <figure class="gallery__item">
+          <button class="gallery__btn" type="button" data-large="images/gallery-5-large.webp">
+            <span class="gallery__frame">
+              <img src="images/gallery-5.webp" width="800" height="602" loading="lazy" decoding="async"
+                   alt="A small study group sitting together outdoors on a green pitch"
+                   data-i18n-attr="alt:g5.alt">
+              <span class="visually-hidden" data-i18n="gallery.openLabel">Open larger</span>
+              <span class="gallery__zoom" aria-hidden="true">
+                <svg class="icon"><use href="#i-expand"></use></svg>
+              </span>
+            </span>
+          </button>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Reviews
+       ======================================================================== -->
+  <section class="section section--tint" id="reviews">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="reviews.eyebrow">From my students</span>
+        <h2 data-i18n="reviews.title">5.0 out of 5 on Preply</h2>
+        <p class="lede" data-i18n="reviews.lede">Every review below was left by a verified student on Preply.</p>
+      </div>
+
+      <div class="grid reviews reveal">
+
+        <figure class="review">
+          <div class="stars" role="img" aria-label="5 out of 5">
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+          </div>
+          <blockquote data-i18n="review.karim">
+            Really great teacher, I'm having a lot of fun. He is super friendly and is helping me a lot
+            with my speaking skills. Definitely recommend him!
+          </blockquote>
+          <figcaption>
+            <span class="avatar" aria-hidden="true">K</span>
+            <span>
+              <strong>Karim</strong><br>
+              <span class="verified">
+                <svg class="icon" aria-hidden="true"><use href="#i-verified"></use></svg>
+                <span data-i18n="reviews.verified">Verified Preply student</span>
+              </span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="review">
+          <div class="stars" role="img" aria-label="5 out of 5">
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+          </div>
+          <blockquote data-i18n="review.mak">
+            An excellent teacher, very patient and able to identify areas I struggle with and how I can
+            improve. Highly recommend!
+          </blockquote>
+          <figcaption>
+            <span class="avatar" aria-hidden="true">M</span>
+            <span>
+              <strong>Mak</strong><br>
+              <span class="verified">
+                <svg class="icon" aria-hidden="true"><use href="#i-verified"></use></svg>
+                <span data-i18n="reviews.verified">Verified Preply student</span>
+              </span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="review">
+          <div class="stars" role="img" aria-label="5 out of 5">
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+          </div>
+          <blockquote data-i18n="review.hala">
+            He is reliable, punctual, and very dedicated to his work. I can recommend him without
+            reservation and am very satisfied with his teaching. Particularly noteworthy is his ability
+            to explain the correct pronunciation (Tajwīd) in an understandable way.
+          </blockquote>
+          <figcaption>
+            <span class="avatar" aria-hidden="true">H</span>
+            <span>
+              <strong>Hala</strong><br>
+              <span class="verified">
+                <svg class="icon" aria-hidden="true"><use href="#i-verified"></use></svg>
+                <span data-i18n="reviews.verified">Verified Preply student</span>
+              </span>
+            </span>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <div class="btn-row reveal" style="margin-block-start:2rem">
+        <a class="btn btn--preply" data-link="preply" target="_blank" rel="noopener"
+           href="https://preply.in/ANAS6EN29906995102?ts=17866532">
+          <svg class="icon" aria-hidden="true"><use href="#i-cap"></use></svg>
+          <span data-i18n="reviews.cta">See my Preply profile</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Gift for huffaz
+       ======================================================================== -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="gift reveal">
+        <div class="gift__icon" aria-hidden="true">🎁</div>
+        <h2 data-i18n="gift.title">A gift for the people of the Qur'an</h2>
+        <p data-i18n="gift.text">
+          If you carry a significant portion of the Noble Qur'an in your memory, there is a standing
+          discount on every course on this page. Mention it when you message and it is applied — no
+          forms, no proof asked for.
+        </p>
+        <p class="gift__mark" data-i18n="gift.mark">In appreciation of what you already carry.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FAQ
+       ======================================================================== -->
+  <section class="section section--surface" id="faq">
+    <div class="container container--narrow">
+
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="faq.eyebrow">Before you book</span>
+        <h2 data-i18n="faq.title">Questions students usually ask</h2>
+      </div>
+
+      <div class="faq reveal">
+
+        <details class="faq__item">
+          <summary class="faq__q">
+            <span data-i18n="faq.q1">Do I need any Arabic to start?</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+          </summary>
+          <p class="faq__a" data-i18n="faq.a1">No. Several of my students began at the alphabet. Lessons are taught in English and shift into more Arabic as you grow into it.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q">
+            <span data-i18n="faq.q2">How long is a lesson?</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+          </summary>
+          <p class="faq__a" data-i18n="faq.a2">Usually 45 to 60 minutes for adults and 30 to 45 for children. We adjust once we both see what holds attention and what does not.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q">
+            <span data-i18n="faq.q3">Is the first lesson really free?</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+          </summary>
+          <p class="faq__a" data-i18n="faq.a3">Yes. The first short session is a trial: we check your level, talk through your goal, and agree on a plan. You decide afterwards whether to continue.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q">
+            <span data-i18n="faq.q4">What do I need for a lesson?</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+          </summary>
+          <p class="faq__a" data-i18n="faq.a4">A phone or laptop with a stable connection, and something to write in. Any material you need is sent to you before we meet.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q">
+            <span data-i18n="faq.q5">Which platform do we meet on?</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+          </summary>
+          <p class="faq__a" data-i18n="faq.a5">Google Meet, or the Preply classroom — those two for now. Booking through Preply keeps the scheduling and the payment in one place.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q">
+            <span data-i18n="faq.q6">Can I book lessons for my child?</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+          </summary>
+          <p class="faq__a" data-i18n="faq.a6">Yes — and not only the recitation course. Every course here is built to work for young learners, with the pace, the examples and the length of the session adjusted to their age. Parents are welcome to sit in on the first lessons.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q">
+            <span data-i18n="faq.q7">What times are you available?</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+          </summary>
+          <p class="faq__a" data-i18n="faq.a7">I teach across a wide spread of hours, from early morning through to late evening. Send me your city or your timezone and I will send back the slots that work.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Contact
+       ======================================================================== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="contact.eyebrow">Get started</span>
+        <h2 data-i18n="contact.title">Tell me what you want to learn</h2>
+        <p class="lede" data-i18n="contact.lede">
+          A message is enough to begin — no form to fill in, no account to make. I answer in English or Arabic.
+        </p>
+      </div>
+
+      <div class="contact__grid reveal">
+
+        <a class="contact__card" data-msg="general"
+           href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20your%20courses.">
+          <span class="contact__card-icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+          </span>
+          <span>
+            <strong data-i18n="contact.waTitle">WhatsApp</strong>
+            <span data-i18n="contact.waSub">Fastest reply</span>
+          </span>
+        </a>
+
+        <a class="contact__card" data-link="telegram" href="https://t.me/AnasAlnaas" target="_blank" rel="noopener">
+          <span class="contact__card-icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-telegram"></use></svg>
+          </span>
+          <span>
+            <strong data-i18n="contact.tgTitle">Telegram</strong>
+            <span data-i18n="contact.tgSub">If you prefer it</span>
+          </span>
+        </a>
+
+        <a class="contact__card" data-link="preply" target="_blank" rel="noopener"
+           href="https://preply.in/ANAS6EN29906995102?ts=17866532">
+          <span class="contact__card-icon">
+            <svg class="icon" aria-hidden="true"><use href="#i-cap"></use></svg>
+          </span>
+          <span>
+            <strong data-i18n="contact.pyTitle">Preply</strong>
+            <span data-i18n="contact.pySub">Book and pay in one place</span>
+          </span>
+        </a>
+
+      </div>
+
+      <p class="contact__note reveal" data-i18n="contact.note">
+        Usually replies within a few hours (UTC+2). Group seats and private lessons are both open.
+      </p>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© <span id="year">2026</span> <span data-i18n="footer.rights">Halqa Edu. All rights reserved.</span></p>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="#courses" data-i18n="nav.courses">Courses</a>
+      <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" data-i18n="nav.book">Book a lesson</a>
+    </nav>
+    <p data-i18n="footer.tagline">Arabic · Qur'an · Seerah</p>
+  </div>
+</footer>
+
+<!-- Lightbox. <dialog> gives us the focus trap, Escape and backdrop for free. -->
+<dialog class="lightbox" id="lightbox" aria-label="Photo">
+  <img class="lightbox__img" alt="">
+  <div class="lightbox__bar">
+    <p class="lightbox__cap"></p>
+    <div class="lightbox__nav">
+      <button class="icon-btn icon-btn--prev" type="button" aria-label="Previous photo" data-i18n-attr="aria-label:gallery.prev">
+        <svg class="icon" aria-hidden="true"><use href="#i-prev"></use></svg>
+      </button>
+      <button class="icon-btn icon-btn--next" type="button" aria-label="Next photo" data-i18n-attr="aria-label:gallery.next">
+        <svg class="icon" aria-hidden="true"><use href="#i-next"></use></svg>
+      </button>
+      <button class="icon-btn" type="button" data-close aria-label="Close" data-i18n-attr="aria-label:gallery.close">
+        <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<script src="js/i18n.js"></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
