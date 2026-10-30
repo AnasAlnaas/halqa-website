@@ -111,6 +111,11 @@ and replace it there too.
 
 ## Deploying
 
+**After changing the CSS or JavaScript,** change the `?v=` stamp on the
+stylesheet and script links in `index.html` (and the stylesheet in `404.html`)
+to today's date. Browsers keep those files for an hour; without a new stamp a
+returning visitor can get the new page with the old styles.
+
 Same Netlify site as before, so the domain and HTTPS carry over.
 
 **Drag and drop:** open your Netlify dashboard → the halqa site → Deploys →

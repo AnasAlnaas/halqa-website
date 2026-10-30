@@ -33,7 +33,10 @@
 <!-- Fonts are self-hosted; nothing is requested from a third party at runtime -->
 <link rel="preload" href="fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/sourceserif4-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/styles.css">
+<!-- ?v= is a version stamp. Change it (here, on the two <script> tags at
+     the bottom, and in 404.html) whenever you change the CSS or JS, so
+     returning visitors fetch the new files instead of a cached old copy. -->
+<link rel="stylesheet" href="css/styles.css?v=2026-10-30">
 
 <script>
   /* Runs before paint: marks that JS is available (the reveal animations are
@@ -1346,7 +1349,7 @@
   </div>
 </dialog>
 
-<script src="js/i18n.js"></script>
-<script src="js/main.js" defer></script>
+<script src="js/i18n.js?v=2026-10-30"></script>
+<script src="js/main.js?v=2026-10-30" defer></script>
 </body>
 </html>
