@@ -111,6 +111,13 @@
       "inLanguage": "en",
       "teaches": "Arabic language",
       "provider": { "@id": "https://www.halqa.ly/#org" },
+      "offers": {
+        "@type": "AggregateOffer",
+        "category": "Paid",
+        "priceCurrency": "USD",
+        "lowPrice": "6",
+        "highPrice": "10"
+      },
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
@@ -124,6 +131,13 @@
       "inLanguage": "en",
       "teaches": "Arabic reading and writing",
       "provider": { "@id": "https://www.halqa.ly/#org" },
+      "offers": {
+        "@type": "AggregateOffer",
+        "category": "Paid",
+        "priceCurrency": "USD",
+        "lowPrice": "6",
+        "highPrice": "10"
+      },
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
@@ -137,6 +151,12 @@
       "inLanguage": "en",
       "teaches": "Qur'an recitation and Tajweed",
       "provider": { "@id": "https://www.halqa.ly/#org" },
+      "offers": {
+        "@type": "Offer",
+        "category": "Paid",
+        "priceCurrency": "USD",
+        "price": "10"
+      },
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
@@ -150,13 +170,19 @@
       "inLanguage": "en",
       "teaches": "Islamic Studies and the Sira",
       "provider": { "@id": "https://www.halqa.ly/#org" },
+      "offers": {
+        "@type": "AggregateOffer",
+        "category": "Paid",
+        "priceCurrency": "USD",
+        "lowPrice": "6",
+        "highPrice": "10"
+      },
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
         "courseSchedule": {
           "@type": "Schedule",
-          "repeatFrequency": "P1W",
-          "repeatCount": 1
+          "repeatFrequency": "P1W"
         },
         "instructor": { "@id": "https://www.halqa.ly/#anas" }
       }
@@ -164,14 +190,20 @@
     {
       "@type": "Course",
       "name": "The Prophetic Day",
-      "description": "A day in the life of the Prophet ﷺ from waking to sleeping — his worship, manners and habits — and how to shape an ordinary day around them. New group starting October 2026.",
+      "description": "A day in the life of the Prophet ﷺ from waking to sleeping — his worship, manners and habits — and how to shape an ordinary day around them. New group opening soon.",
       "inLanguage": "en",
       "teaches": "Prophetic practice and daily routine",
       "provider": { "@id": "https://www.halqa.ly/#org" },
+      "offers": {
+        "@type": "AggregateOffer",
+        "category": "Paid",
+        "priceCurrency": "USD",
+        "lowPrice": "6",
+        "highPrice": "10"
+      },
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
-        "startDate": "2026-10",
         "instructor": { "@id": "https://www.halqa.ly/#anas" }
       }
     },
@@ -200,6 +232,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes. The first short session is a trial: we check your level, talk through your goal, and agree on a plan. You decide afterwards whether to continue."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do lessons cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "$10 per lesson one-to-one, or $6 per student in a group, and the first lesson is free. These are the prices when you book with me directly on WhatsApp or Telegram; Preply sets its own price on its platform."
           }
         },
         {
@@ -280,7 +320,7 @@
 <header class="header">
   <div class="container header__inner">
 
-    <a class="brand" href="#" aria-label="Halqa — home">
+    <a class="brand" href="/" aria-label="Halqa — home">
       <img class="brand__mark" src="favicon.svg" width="34" height="34" alt="">
       <span class="brand__name">Halqa</span>
       <span class="brand__name-ar" aria-hidden="true">حَلْقَة</span>
@@ -331,9 +371,17 @@
       <div>
         <span class="eyebrow" data-i18n="hero.eyebrow">Arabic · Qur'an · Seerah — taught online</span>
 
+        <!-- The full sentence is what Google, screen readers and visitors
+             without JavaScript get. With JavaScript on (and motion allowed) it
+             is visually swapped for the typed version below it, which cycles
+             through hero.typedWords in js/i18n.js. -->
         <h1 class="hero__title">
-          <span class="hero__title-ar" aria-hidden="true">حَلْقَة</span>
-          <span data-i18n="hero.title">Learn Arabic and the Seerah of the Prophet ﷺ with a teacher beside you</span>
+          <span class="hero__title-ar ink-write" aria-hidden="true">حَلْقَة</span>
+          <span class="hero__title-full" data-i18n="hero.title">Learn Arabic and the Seerah of the Prophet ﷺ with a teacher beside you</span>
+          <span class="hero__typed" aria-hidden="true" hidden>
+            <span class="hero__typed-line"><span data-i18n="hero.typedBefore">Learn</span> <span class="typer"><span class="typer__text">Arabic</span></span></span>
+            <span class="hero__typed-rest" data-i18n="hero.typedAfter">with a teacher beside you</span>
+          </span>
         </h1>
 
         <p class="hero__sub" data-i18n="hero.sub">
@@ -359,6 +407,21 @@
       </div>
 
       <figure class="hero__figure">
+        <!-- A halqa is a study circle: a ring of students turning slowly
+             behind the portrait. Purely decorative. -->
+        <svg class="hero__ring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="0.6" stroke-dasharray="1.5 4.5"/>
+          <g class="hero__ring-seats">
+            <circle cx="192" cy="100" r="3.2"/>
+            <circle cx="165.05" cy="165.05" r="2.4"/>
+            <circle cx="100" cy="192" r="3.2"/>
+            <circle cx="34.95" cy="165.05" r="2.4"/>
+            <circle cx="8" cy="100" r="3.2"/>
+            <circle cx="34.95" cy="34.95" r="2.4"/>
+            <circle cx="100" cy="8" r="3.2" class="hero__ring-gold"/>
+            <circle cx="165.05" cy="34.95" r="2.4"/>
+          </g>
+        </svg>
         <img class="hero__portrait" src="images/portrait.webp"
              srcset="images/portrait.webp 640w, images/portrait@2x.webp 960w"
              sizes="(min-width: 900px) 380px, min(100vw - 2rem, 380px)"
@@ -368,7 +431,7 @@
         <figcaption class="hero__rating">
           <svg class="icon" aria-hidden="true" style="width:1.1rem;height:1.1rem;color:var(--gold)"><use href="#i-star"></use></svg>
           <span>
-            <strong data-i18n="hero.ratingValue">5.0</strong>
+            <strong data-stat="rating" data-static>5.0</strong>
             <span data-i18n="hero.ratingLabel">rated on Preply</span>
           </span>
         </figcaption>
@@ -377,17 +440,19 @@
     </div>
 
     <div class="container">
-      <ul class="trust">
+      <!-- data-stat numbers come from HALQA_STATS in js/i18n.js and count up
+           from zero the first time they scroll into view. -->
+      <ul class="trust reveal stagger">
         <li class="trust__item">
-          <strong class="trust__value">300+</strong>
+          <strong class="trust__value" data-stat="students" data-suffix="+">300+</strong>
           <span class="trust__label" data-i18n="trust.students">Students taught</span>
         </li>
         <li class="trust__item">
-          <strong class="trust__value">82</strong>
+          <strong class="trust__value" data-stat="lessons">127</strong>
           <span class="trust__label" data-i18n="trust.lessons">Lessons on Preply</span>
         </li>
         <li class="trust__item">
-          <strong class="trust__value">5.0</strong>
+          <strong class="trust__value" data-stat="rating">5.0</strong>
           <span class="trust__label" data-i18n="trust.rating">Average rating</span>
         </li>
         <li class="trust__item">
@@ -408,7 +473,7 @@
         <span class="eyebrow" data-i18n="now.eyebrow">Happening now</span>
         <h2 data-i18n="now.title">Two courses on the calendar</h2>
         <p class="lede" data-i18n="now.lede">
-          One halqa is running right now, and a new one opens in October. Both are also available as
+          One halqa is running right now, and a new one opens soon. Both are also available as
           private lessons whenever suits you.
         </p>
       </div>
@@ -448,7 +513,7 @@
         <article class="featured__card featured__card--soon">
           <div class="featured__head">
             <h3 class="featured__title" data-i18n="now.dayTitle">The Prophetic Day</h3>
-            <span class="badge badge--soon" data-i18n="now.soonBadge">Starting October 2026</span>
+            <span class="badge badge--soon" data-i18n="now.soonBadge">Opening soon</span>
           </div>
           <p data-i18n="now.dayText">
             A day in the life of the Prophet ﷺ from waking to sleeping — his worship, his manners,
@@ -457,7 +522,7 @@
           <ul class="featured__list">
             <li>
               <svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>
-              <span data-i18n="now.dayP1">A new group opens in October 2026, in shā’ Allāh</span>
+              <span data-i18n="now.dayP1">A new group opens soon, in shā’ Allāh</span>
             </li>
             <li>
               <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
@@ -469,7 +534,7 @@
             </li>
           </ul>
           <a class="btn btn--ghost" data-msg="day"
-             href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20reserve%20a%20seat%20on%20The%20Prophetic%20Day%20course%20in%20October.">
+             href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20reserve%20a%20seat%20on%20The%20Prophetic%20Day%20course.">
             <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
             <span data-i18n="now.dayCta">Reserve a seat</span>
           </a>
@@ -506,7 +571,7 @@
 
         <article class="card reveal">
           <div class="card__media card__media--glyph">
-            <span class="card__glyph" aria-hidden="true">العَرَبِيَّة</span>
+            <span class="card__glyph ink-write" aria-hidden="true">العَرَبِيَّة</span>
             <span class="badge badge--open card__badge" data-i18n="courses.openBadge">Open for booking</span>
           </div>
           <div class="card__body">
@@ -521,7 +586,10 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg><span data-i18n="course.arabic.m3">45–60 min</span></li>
             </ul>
             <div class="card__foot">
-              <p class="price" data-course="arabic" data-i18n="price.ask">Pricing on request</p>
+              <p class="price" data-formats="group private">
+                <span class="price__main"><span>From</span> <strong>$6</strong> <span>per lesson</span></span>
+                <span class="price__sub">$10 one-to-one</span>
+              </p>
               <a class="btn btn--ghost btn--sm" data-msg="arabic"
                  href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20the%20Arabic%20course%20for%20non-Arabic%20speakers."
                  data-i18n="courses.bookCta">Book</a>
@@ -531,7 +599,7 @@
 
         <article class="card reveal">
           <div class="card__media card__media--glyph">
-            <span class="card__glyph" aria-hidden="true">الكِتَابَة</span>
+            <span class="card__glyph ink-write" aria-hidden="true">الكِتَابَة</span>
             <span class="badge badge--open card__badge" data-i18n="courses.openBadge">Open for booking</span>
           </div>
           <div class="card__body">
@@ -546,7 +614,10 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg><span data-i18n="course.writing.m3">45 min</span></li>
             </ul>
             <div class="card__foot">
-              <p class="price" data-course="writing" data-i18n="price.ask">Pricing on request</p>
+              <p class="price" data-formats="group private">
+                <span class="price__main"><span>From</span> <strong>$6</strong> <span>per lesson</span></span>
+                <span class="price__sub">$10 one-to-one</span>
+              </p>
               <a class="btn btn--ghost btn--sm" data-msg="writing"
                  href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20the%20Arabic%20reading%20and%20writing%20course."
                  data-i18n="courses.bookCta">Book</a>
@@ -556,7 +627,7 @@
 
         <article class="card reveal">
           <div class="card__media card__media--glyph">
-            <span class="card__glyph" aria-hidden="true">التِّلَاوَة</span>
+            <span class="card__glyph ink-write" aria-hidden="true">التِّلَاوَة</span>
             <span class="badge badge--open card__badge" data-i18n="courses.openBadge">Open for booking</span>
           </div>
           <div class="card__body">
@@ -571,7 +642,10 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg><span data-i18n="course.quran.m3">30–45 min</span></li>
             </ul>
             <div class="card__foot">
-              <p class="price" data-course="quran" data-i18n="price.ask">Pricing on request</p>
+              <p class="price" data-formats="private">
+                <span class="price__main"><strong>$10</strong> <span>per lesson</span></span>
+                <span class="price__sub">One-to-one lessons</span>
+              </p>
               <a class="btn btn--ghost btn--sm" data-msg="quran"
                  href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20Qur'an%20recitation%20lessons%20for%20children."
                  data-i18n="courses.bookCta">Book</a>
@@ -581,7 +655,7 @@
 
         <article class="card reveal">
           <div class="card__media card__media--glyph">
-            <span class="card__glyph" aria-hidden="true">السِّيرَة</span>
+            <span class="card__glyph ink-write" aria-hidden="true">السِّيرَة</span>
             <span class="badge badge--live card__badge" data-i18n="now.liveBadge">Ongoing now</span>
           </div>
           <div class="card__body">
@@ -596,7 +670,10 @@
               <li><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span data-i18n="course.sirah.m3">Weekly</span></li>
             </ul>
             <div class="card__foot">
-              <p class="price" data-course="sirah" data-i18n="price.ask">Pricing on request</p>
+              <p class="price" data-formats="group private">
+                <span class="price__main"><span>From</span> <strong>$6</strong> <span>per lesson</span></span>
+                <span class="price__sub">$10 one-to-one</span>
+              </p>
               <a class="btn btn--ghost btn--sm" data-msg="sirah"
                  href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20join%20the%20Seerah%20halqa%20that%20is%20running%20now."
                  data-i18n="courses.bookCta">Book</a>
@@ -606,8 +683,8 @@
 
         <article class="card reveal">
           <div class="card__media card__media--glyph">
-            <span class="card__glyph card__glyph--long" aria-hidden="true">اليَوْمُ النَّبَوِي</span>
-            <span class="badge badge--soon card__badge" data-i18n="now.soonBadge">Starting October 2026</span>
+            <span class="card__glyph card__glyph--long ink-write" aria-hidden="true">اليَوْمُ النَّبَوِي</span>
+            <span class="badge badge--soon card__badge" data-i18n="now.soonBadge">Opening soon</span>
           </div>
           <div class="card__body">
             <h3 class="card__title" data-i18n="course.day.title">The Prophetic Day</h3>
@@ -618,12 +695,15 @@
             <ul class="card__meta">
               <li><svg class="icon" aria-hidden="true"><use href="#i-level"></use></svg><span data-i18n="course.day.m1">All levels</span></li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg><span data-i18n="course.day.m2">Group or private</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span data-i18n="course.day.m3">From October</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span data-i18n="course.day.m3">Opening soon</span></li>
             </ul>
             <div class="card__foot">
-              <p class="price" data-course="day" data-i18n="price.ask">Pricing on request</p>
+              <p class="price" data-formats="group private">
+                <span class="price__main"><span>From</span> <strong>$6</strong> <span>per lesson</span></span>
+                <span class="price__sub">$10 one-to-one</span>
+              </p>
               <a class="btn btn--ghost btn--sm" data-msg="day"
-                 href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20reserve%20a%20seat%20on%20The%20Prophetic%20Day%20course%20in%20October."
+                 href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20reserve%20a%20seat%20on%20The%20Prophetic%20Day%20course."
                  data-i18n="courses.bookCta">Book</a>
             </div>
           </div>
@@ -655,6 +735,7 @@
             <svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>
           </div>
           <h3 data-i18n="formats.groupTitle">Live small groups</h3>
+          <p class="price-tag" data-price="group"><strong>$6</strong> <span>per lesson, per student</span></p>
           <p data-i18n="formats.groupText">
             You learn alongside a handful of other students in a fixed weekly halqa. Questions get
             asked out loud, and the group keeps everyone moving.
@@ -677,6 +758,7 @@
             <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
           </div>
           <h3 data-i18n="formats.privateTitle">Private one-to-one</h3>
+          <p class="price-tag" data-price="private"><strong>$10</strong> <span>per lesson</span></p>
           <p data-i18n="formats.privateText">
             The whole session is yours. We set the pace, the times and the syllabus around you, and you
             can start in any week of the year.
@@ -757,7 +839,7 @@
             <li>
               <svg class="icon" aria-hidden="true"><use href="#i-award"></use></svg>
               <div>
-                <strong data-i18n="about.c5">5.0 on Preply across 82 lessons</strong>
+                <strong data-i18n="about.c5">5.0 on Preply across 127 lessons</strong>
                 <span data-i18n="about.c5sub">Part of more than 300 students taught in total, between online platforms and real classrooms.</span>
               </div>
             </li>
@@ -779,23 +861,60 @@
         <h2 data-i18n="how.title">From a message to your first lesson</h2>
       </div>
 
-      <div class="grid steps reveal">
-        <div class="step">
-          <h3 data-i18n="how.s1">Send a message</h3>
-          <p data-i18n="how.s1text">WhatsApp or Telegram, in English or Arabic. Tell me what you want to learn and roughly where you are now.</p>
+      <div class="how">
+        <div class="grid steps reveal stagger">
+          <div class="step">
+            <h3 data-i18n="how.s1">Send a message</h3>
+            <p data-i18n="how.s1text">WhatsApp or Telegram, in English or Arabic. Tell me what you want to learn and roughly where you are now.</p>
+          </div>
+          <div class="step">
+            <h3 data-i18n="how.s2">Take a free trial</h3>
+            <p data-i18n="how.s2text">We meet for a short first session, find your real level, and agree on a plan. Nothing to pay for this one.</p>
+          </div>
+          <div class="step">
+            <h3 data-i18n="how.s3">Pick your times</h3>
+            <p data-i18n="how.s3text">A fixed weekly slot if you join a group, or times chosen around your timezone if you study privately.</p>
+          </div>
+          <div class="step">
+            <h3 data-i18n="how.s4">Start, and keep going</h3>
+            <p data-i18n="how.s4text">You get the material after each session, and we keep track of what has been covered so nothing quietly gets lost.</p>
+          </div>
         </div>
-        <div class="step">
-          <h3 data-i18n="how.s2">Take a free trial</h3>
-          <p data-i18n="how.s2text">We meet for a short first session, find your real level, and agree on a plan. Nothing to pay for this one.</p>
-        </div>
-        <div class="step">
-          <h3 data-i18n="how.s3">Pick your times</h3>
-          <p data-i18n="how.s3text">A fixed weekly slot if you join a group, or times chosen around your timezone if you study privately.</p>
-        </div>
-        <div class="step">
-          <h3 data-i18n="how.s4">Start, and keep going</h3>
-          <p data-i18n="how.s4text">You get the material after each session, and we keep track of what has been covered so nothing quietly gets lost.</p>
-        </div>
+
+        <!-- An example first conversation. With JavaScript it plays itself:
+             the student's message is typed into the bar and sent, the reply
+             shows "typing…" first, and the whole thing loops while it is on
+             screen. Without JavaScript, or with reduced motion, the finished
+             conversation simply sits here. The words are chat.* in i18n.js. -->
+        <figure class="chat reveal">
+          <div class="chat__window" role="img"
+               aria-label="An example WhatsApp conversation: a student asks to learn Arabic as a complete beginner, and Anas offers a free trial lesson and asks for their timezone."
+               data-i18n-attr="aria-label:chat.label">
+            <div class="chat__head">
+              <img class="chat__avatar" src="images/portrait.webp" width="40" height="40" alt="" loading="lazy" decoding="async">
+              <span class="chat__who">
+                <strong data-i18n="chat.name">Anas · Halqa</strong>
+                <span class="chat__status" data-i18n="chat.online">online</span>
+              </span>
+            </div>
+            <div class="chat__log">
+              <p class="chat__msg chat__msg--me" data-i18n="chat.m1">Assalamu alaykum! I'd like to learn Arabic. I'm a complete beginner 🙂</p>
+              <p class="chat__msg chat__msg--them" data-i18n="chat.m2">Wa alaykum assalam, welcome! We start with a free trial lesson to find your level. Which city or timezone are you in?</p>
+              <p class="chat__msg chat__msg--me" data-i18n="chat.m3">London.</p>
+              <p class="chat__msg chat__msg--them" data-i18n="chat.m4">Perfect. I will send you a few times that suit you. See you soon, in shā’ Allāh 🌱</p>
+            </div>
+            <div class="chat__bar">
+              <span class="chat__input">
+                <span class="chat__input-text"></span>
+                <span class="chat__placeholder" data-i18n="chat.placeholder">Message</span>
+              </span>
+              <span class="chat__send">
+                <svg class="icon"><use href="#i-arrow"></use></svg>
+              </span>
+            </div>
+          </div>
+          <figcaption class="chat__caption" data-i18n="chat.caption">An example of how a first conversation usually goes</figcaption>
+        </figure>
       </div>
 
     </div>
@@ -817,7 +936,7 @@
         </p>
       </div>
 
-      <div class="grid gallery reveal">
+      <div class="grid gallery reveal stagger">
 
         <!-- A live Sirah session. This is a 2:1 screenshot rather than a 4:3
              photo, so it takes a double-width tile at its own aspect ratio — a
@@ -923,7 +1042,41 @@
         <p class="lede" data-i18n="reviews.lede">Every review below was left by a verified student on Preply.</p>
       </div>
 
-      <div class="grid reviews reveal">
+      <!-- Preply at a glance. Built in HTML rather than a screenshot so it
+           stays sharp, translates, and can be read by Google. The numbers
+           come from HALQA_STATS in js/i18n.js. -->
+      <div class="preply-card reveal">
+        <div class="preply-card__score">
+          <strong class="preply-card__rating" data-stat="rating">5.0</strong>
+          <div>
+            <div class="stars" role="img" aria-label="5 out of 5">
+              <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            </div>
+            <span class="preply-card__label" data-i18n="preply.ratingLabel">Average rating on Preply</span>
+          </div>
+        </div>
+        <dl class="preply-card__stats">
+          <div>
+            <dt data-i18n="preply.lessons">Lessons taught on Preply</dt>
+            <dd data-stat="lessons">127</dd>
+          </div>
+          <div>
+            <dt data-i18n="preply.reviews">Verified reviews</dt>
+            <dd data-stat="reviews">4</dd>
+          </div>
+        </dl>
+        <a class="btn btn--preply preply-card__cta" data-link="preply" target="_blank" rel="noopener"
+           href="https://preply.in/ANAS6EN29906995102?ts=17866532">
+          <svg class="icon" aria-hidden="true"><use href="#i-cap"></use></svg>
+          <span data-i18n="reviews.cta">See my Preply profile</span>
+        </a>
+      </div>
+
+      <div class="grid reviews reveal stagger">
 
         <figure class="review">
           <div class="stars" role="img" aria-label="5 out of 5">
@@ -1000,14 +1153,6 @@
 
       </div>
 
-      <div class="btn-row reveal" style="margin-block-start:2rem">
-        <a class="btn btn--preply" data-link="preply" target="_blank" rel="noopener"
-           href="https://preply.in/ANAS6EN29906995102?ts=17866532">
-          <svg class="icon" aria-hidden="true"><use href="#i-cap"></use></svg>
-          <span data-i18n="reviews.cta">See my Preply profile</span>
-        </a>
-      </div>
-
     </div>
   </section>
 
@@ -1068,6 +1213,14 @@
 
         <details class="faq__item">
           <summary class="faq__q">
+            <span data-i18n="faq.qPrice">How much do lessons cost?</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+          </summary>
+          <p class="faq__a" data-i18n="faq.aPrice">$10 per lesson one-to-one, or $6 per student in a group, and the first lesson is free. These are the prices when you book with me directly on WhatsApp or Telegram; Preply sets its own price on its platform.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q">
             <span data-i18n="faq.q4">What do I need for a lesson?</span>
             <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
           </summary>
@@ -1116,9 +1269,9 @@
         </p>
       </div>
 
-      <div class="contact__grid reveal">
+      <div class="contact__grid reveal stagger">
 
-        <a class="contact__card" data-msg="general"
+        <a class="contact__card contact__card--pulse" data-msg="general"
            href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20your%20courses.">
           <span class="contact__card-icon">
             <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>

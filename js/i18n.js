@@ -46,8 +46,13 @@ window.HALQA_I18N = {
     'hero.note':
       'Lessons in English or Arabic · Based in Libya (UTC+2) · Usually replies within a few hours',
     'hero.portraitAlt': 'Anas, Arabic and Islamic studies teacher',
-    'hero.ratingValue': '5.0',
     'hero.ratingLabel': 'rated on Preply',
+    /* The animated headline: "Learn ___ with a teacher beside you", with the
+       blank typed out word by word. The full sentence in hero.title above is
+       still what Google and screen readers get. */
+    'hero.typedBefore': 'Learn',
+    'hero.typedWords': ['Arabic', "the Qur'an", 'Tajweed', 'the Seerah ﷺ'],
+    'hero.typedAfter': 'with a teacher beside you',
     'trust.lessons': 'Lessons on Preply',
     'trust.students': 'Students taught',
     'trust.rating': 'Average rating',
@@ -58,9 +63,9 @@ window.HALQA_I18N = {
     'now.eyebrow': 'Happening now',
     'now.title': 'Two courses on the calendar',
     'now.lede':
-      'One halqa is running right now, and a new one opens in October. Both are also available as private lessons whenever suits you.',
+      'One halqa is running right now, and a new one opens soon. Both are also available as private lessons whenever suits you.',
     'now.liveBadge': 'Ongoing now',
-    'now.soonBadge': 'Starting October 2026',
+    'now.soonBadge': 'Opening soon',
     'now.sirahTitle': 'Seerah of the Prophet ﷺ',
     'now.sirahText':
       'We are moving through the life of the Prophet ﷺ session by session — Makkah, the Hijrah, Madinah — with the context behind each event and what it asks of us.',
@@ -71,7 +76,7 @@ window.HALQA_I18N = {
     'now.dayTitle': 'The Prophetic Day',
     'now.dayText':
       'A day in the life of the Prophet ﷺ from waking to sleeping — his worship, his manners, his habits — and how to bring that shape into your own day.',
-    'now.dayP1': 'A new group opens in October 2026, in shā’ Allāh',
+    'now.dayP1': 'A new group opens soon, in shā’ Allāh',
     'now.dayP2': 'Seats are reserved in advance',
     'now.dayP3': 'Booking early gets first choice of times',
     'now.dayCta': 'Reserve a seat',
@@ -119,10 +124,14 @@ window.HALQA_I18N = {
       'His day from morning to night — worship, manners, work, rest — and the practical shape it gives to an ordinary day now.',
     'course.day.m1': 'All levels',
     'course.day.m2': 'Group or private',
-    'course.day.m3': 'From October',
+    'course.day.m3': 'Opening soon',
 
+    /* {price} is filled in from HALQA_PRICES at the bottom of this file */
     'price.from': 'From',
     'price.perLesson': 'per lesson',
+    'price.perStudent': 'per lesson, per student',
+    'price.privateLine': '{price} one-to-one',
+    'price.privateOnly': 'One-to-one lessons',
     'price.ask': 'Pricing on request',
     'price.trial': 'First lesson free',
 
@@ -166,9 +175,10 @@ window.HALQA_I18N = {
     'about.c4': 'Interactive by default',
     'about.c4sub':
       'Boards, images, manuscripts and questions — not a lecture read out loud at you.',
-    'about.c5': '5.0 on Preply across 82 lessons',
+    /* {rating}, {lessons}, {reviews} and {students} come from HALQA_STATS */
+    'about.c5': '{rating} on Preply across {lessons} lessons',
     'about.c5sub':
-      'Part of more than 300 students taught in total, between online platforms and real classrooms.',
+      'Part of more than {students} students taught in total, between online platforms and real classrooms.',
     'about.figCaption':
       'Teaching الكتابة — the shape of early Kufic script — from an original manuscript.',
     'about.figAlt':
@@ -189,6 +199,20 @@ window.HALQA_I18N = {
     'how.s4': 'Start, and keep going',
     'how.s4text':
       'You get the material after each session, and we keep track of what has been covered so nothing quietly gets lost.',
+
+    /* The animated example chat beside the steps */
+    'chat.label':
+      'An example WhatsApp conversation: a student asks to learn Arabic as a complete beginner, and Anas offers a free trial lesson and asks for their timezone.',
+    'chat.name': 'Anas · Halqa',
+    'chat.online': 'online',
+    'chat.typing': 'typing…',
+    'chat.placeholder': 'Message',
+    'chat.m1': "Assalamu alaykum! I'd like to learn Arabic. I'm a complete beginner 🙂",
+    'chat.m2':
+      'Wa alaykum assalam, welcome! We start with a free trial lesson to find your level. Which city or timezone are you in?',
+    'chat.m3': 'London.',
+    'chat.m4': 'Perfect. I will send you a few times that suit you. See you soon, in shā’ Allāh 🌱',
+    'chat.caption': 'An example of how a first conversation usually goes',
 
     /* ---- gallery ---- */
     'gallery.eyebrow': 'From the classroom',
@@ -213,10 +237,13 @@ window.HALQA_I18N = {
 
     /* ---- reviews ---- */
     'reviews.eyebrow': 'From my students',
-    'reviews.title': '5.0 out of 5 on Preply',
+    'reviews.title': '{rating} out of 5 on Preply',
     'reviews.lede': 'Every review below was left by a verified student on Preply.',
     'reviews.verified': 'Verified Preply student',
     'reviews.cta': 'See my Preply profile',
+    'preply.ratingLabel': 'Average rating on Preply',
+    'preply.lessons': 'Lessons taught on Preply',
+    'preply.reviews': 'Verified reviews',
     'review.mak':
       'An excellent teacher, very patient and able to identify areas I struggle with and how I can improve. Highly recommend!',
     'review.hala':
@@ -242,6 +269,9 @@ window.HALQA_I18N = {
     'faq.q3': 'Is the first lesson really free?',
     'faq.a3':
       'Yes. The first short session is a trial: we check your level, talk through your goal, and agree on a plan. You decide afterwards whether to continue.',
+    'faq.qPrice': 'How much do lessons cost?',
+    'faq.aPrice':
+      '$10 per lesson one-to-one, or $6 per student in a group, and the first lesson is free. These are the prices when you book with me directly on WhatsApp or Telegram; Preply sets its own price on its platform.',
     'faq.q4': 'What do I need for a lesson?',
     'faq.a4':
       'A phone or laptop with a stable connection, and something to write in. Any material you need is sent to you before we meet.',
@@ -304,8 +334,10 @@ window.HALQA_I18N = {
     'hero.note':
       'الدروس بالإنجليزية أو العربية · من ليبيا (UTC+2) · الرد عادةً خلال ساعات',
     'hero.portraitAlt': 'أنس، معلّم اللغة العربية والدراسات الإسلامية',
-    'hero.ratingValue': '5.0',
     'hero.ratingLabel': 'التقييم على Preply',
+    'hero.typedBefore': 'تعلّم',
+    'hero.typedWords': ['العربية', 'تلاوة القرآن', 'التجويد', 'السيرة النبوية'],
+    'hero.typedAfter': 'ومعلّمك إلى جانبك',
     'trust.lessons': 'درسًا على Preply',
     'trust.students': 'طالبًا',
     'trust.rating': 'متوسط التقييم',
@@ -316,9 +348,9 @@ window.HALQA_I18N = {
     'now.eyebrow': 'يجري الآن',
     'now.title': 'دورتان على الجدول',
     'now.lede':
-      'حلقة تعمل الآن، وأخرى تُفتح في أكتوبر. وكلتاهما متاحة كدروس فردية في أي وقت يناسبك.',
+      'حلقة تعمل الآن، وأخرى تُفتح قريبًا. وكلتاهما متاحة كدروس فردية في أي وقت يناسبك.',
     'now.liveBadge': 'مستمرة الآن',
-    'now.soonBadge': 'تبدأ في أكتوبر 2026',
+    'now.soonBadge': 'تبدأ قريبًا',
     'now.sirahTitle': 'السيرة النبوية',
     'now.sirahText':
       'نسير في سيرة النبي ﷺ حلقةً بعد حلقة — مكة، والهجرة، والمدينة — مع سياق كل حدث وما يطلبه منّا.',
@@ -329,7 +361,7 @@ window.HALQA_I18N = {
     'now.dayTitle': 'اليوم النبوي',
     'now.dayText':
       'يوم من حياة النبي ﷺ من الاستيقاظ إلى النوم — عبادته وأخلاقه وعاداته — وكيف تُعيد هذه الهيئة إلى يومك أنت.',
-    'now.dayP1': 'مجموعة جديدة تُفتح في أكتوبر 2026 بإذن الله',
+    'now.dayP1': 'مجموعة جديدة تُفتح قريبًا بإذن الله',
     'now.dayP2': 'المقاعد تُحجز مسبقًا',
     'now.dayP3': 'الحجز المبكر يختار الأوقات أولًا',
     'now.dayCta': 'احجز مقعدًا',
@@ -377,10 +409,13 @@ window.HALQA_I18N = {
       'يومه ﷺ من الصباح إلى الليل — عبادةً وخُلقًا وعملًا وراحة — والهيئة العملية التي يمنحها ليومٍ عادي اليوم.',
     'course.day.m1': 'كل المستويات',
     'course.day.m2': 'مجموعة أو فردي',
-    'course.day.m3': 'من أكتوبر',
+    'course.day.m3': 'قريبًا',
 
     'price.from': 'يبدأ من',
     'price.perLesson': 'للدرس',
+    'price.perStudent': 'للدرس، لكل طالب',
+    'price.privateLine': '{price} للدرس الفردي',
+    'price.privateOnly': 'دروس فردية',
     'price.ask': 'السعر عند الطلب',
     'price.trial': 'الدرس الأول مجانًا',
 
@@ -421,8 +456,8 @@ window.HALQA_I18N = {
     'about.c3sub': 'سيرة النبي ﷺ وتاريخها المحيط بها، تُدرَّس قصةً محفوظًا سياقها.',
     'about.c4': 'تفاعلي بطبعه',
     'about.c4sub': 'سبّورة وصور ومخطوطات وأسئلة — لا محاضرة تُقرأ عليك.',
-    'about.c5': '5.0 على Preply في 82 درسًا',
-    'about.c5sub': 'جزء من أكثر من 300 طالب دُرّسوا بين المنصّات والصفوف الحقيقية.',
+    'about.c5': '{rating} على Preply في {lessons} درسًا',
+    'about.c5sub': 'جزء من أكثر من {students} طالب دُرّسوا بين المنصّات والصفوف الحقيقية.',
     'about.figCaption': 'درس الكتابة — شكل الخط الكوفي المبكر — من مخطوط أصلي.',
     'about.figAlt':
       'أنس يُدرّس على شاشة تفاعلية تعرض مخطوطًا قرآنيًا بالخط الكوفي، وطالبان يتابعان',
@@ -442,6 +477,19 @@ window.HALQA_I18N = {
     'how.s4': 'ابدأ واستمرّ',
     'how.s4text':
       'تصلك المادة بعد كل لقاء، ونتابع ما أنجزناه حتى لا يضيع شيء في الطريق.',
+
+    'chat.label':
+      'مثال على محادثة واتساب: وليّ أمر يطلب دروس تلاوة لابنه، وأنس يعرض درسًا تجريبيًا مجانيًا ويسأل عن مدينتهم.',
+    'chat.name': 'أنس · حلقة',
+    'chat.online': 'متصل الآن',
+    'chat.typing': 'يكتب…',
+    'chat.placeholder': 'رسالة',
+    'chat.m1': 'السلام عليكم، أريد دروس تلاوة لابني، عمره ثماني سنوات.',
+    'chat.m2':
+      'وعليكم السلام، أهلًا وسهلًا! نبدأ بدرس تجريبي مجاني نتعرّف فيه على مستواه. في أي مدينة أنتم؟',
+    'chat.m3': 'في برلين.',
+    'chat.m4': 'ممتاز، سأرسل لكم أوقاتًا تناسب توقيتكم. نلقاكم قريبًا بإذن الله 🌱',
+    'chat.caption': 'مثال على أول محادثة كما تجري عادةً',
 
     /* ---- gallery ---- */
     'gallery.eyebrow': 'من الحلقة',
@@ -463,10 +511,13 @@ window.HALQA_I18N = {
 
     /* ---- reviews ---- */
     'reviews.eyebrow': 'من طلابي',
-    'reviews.title': '5.0 من 5 على Preply',
+    'reviews.title': '{rating} من 5 على Preply',
     'reviews.lede': 'كل تقييم أدناه كتبه طالب موثّق على منصة Preply.',
     'reviews.verified': 'طالب موثّق على Preply',
     'reviews.cta': 'اطّلع على ملفي في Preply',
+    'preply.ratingLabel': 'متوسط التقييم على Preply',
+    'preply.lessons': 'درسًا على Preply',
+    'preply.reviews': 'تقييمات موثّقة',
     'review.mak':
       'معلّم ممتاز، صبور جدًا وقادر على تحديد المواضع التي أجد فيها صعوبة وكيف أتحسّن. أنصح به بشدة!',
     'review.hala':
@@ -492,6 +543,9 @@ window.HALQA_I18N = {
     'faq.q3': 'هل الدرس الأول مجاني فعلًا؟',
     'faq.a3':
       'نعم. اللقاء الأول القصير تجريبي: نتحقّق من مستواك، ونتحدّث عن هدفك، ونتفق على خطة. ثم تقرّر بعده إن أردت الاستمرار.',
+    'faq.qPrice': 'كم سعر الدروس؟',
+    'faq.aPrice':
+      '10 دولارات للدرس الفردي، أو 6 دولارات لكل طالب في المجموعة، والدرس الأول مجاني. هذه أسعار الحجز المباشر معي عبر واتساب أو تلغرام؛ أما Preply فيحدّد سعره الخاص على منصّته.',
     'faq.q4': 'ماذا أحتاج للدرس؟',
     'faq.a4':
       'هاتف أو حاسوب باتصال مستقر، وشيء تكتب فيه. وأي مادة تحتاجها تُرسل إليك قبل اللقاء.',
@@ -544,7 +598,7 @@ window.HALQA_CONTACT = {
       general: 'Assalamu alaykum. I would like to ask about your courses.',
       sirah:
         'Assalamu alaykum. I would like to join the Seerah halqa that is running now.',
-      day: 'Assalamu alaykum. I would like to reserve a seat on The Prophetic Day course in October.',
+      day: 'Assalamu alaykum. I would like to reserve a seat on The Prophetic Day course.',
       arabic:
         'Assalamu alaykum. I would like to ask about the Arabic course for non-Arabic speakers.',
       writing:
@@ -558,7 +612,7 @@ window.HALQA_CONTACT = {
       trial: 'السلام عليكم. أريد حجز درس تجريبي مجاني.',
       general: 'السلام عليكم. أريد السؤال عن الدورات.',
       sirah: 'السلام عليكم. أريد الانضمام إلى حلقة السيرة الجارية الآن.',
-      day: 'السلام عليكم. أريد حجز مقعد في دورة اليوم النبوي في أكتوبر.',
+      day: 'السلام عليكم. أريد حجز مقعد في دورة اليوم النبوي.',
       arabic: 'السلام عليكم. أريد السؤال عن دورة العربية لغير الناطقين بها.',
       writing: 'السلام عليكم. أريد السؤال عن دورة القراءة والكتابة بالعربية.',
       quran: 'السلام عليكم. أريد السؤال عن دروس تلاوة القرآن للأطفال.',
@@ -569,27 +623,40 @@ window.HALQA_CONTACT = {
 };
 
 /* ==========================================================================
-   PRICES  —  ⚠️  READ THIS BEFORE YOU PUBLISH
+   PRICES
    --------------------------------------------------------------------------
-   The numbers below are PLACEHOLDERS. They are NOT shown to anyone while
-   `confirmed` is false — every course shows "Pricing on request" instead, so
-   nothing misleading can go live by accident.
+   One rate for private lessons and one for groups, per lesson, in US dollars,
+   for lessons booked directly (Preply sets its own price). Each course card
+   says which formats it offers with data-formats="private group" in
+   index.html, and shows "From $6" plus the private rate, or just the private
+   rate. Set either value to null to hide it.
 
-   To switch the prices on:
-     1. Put your real rate (in US dollars) next to each course id.
-     2. Change  confirmed: false   to   confirmed: true
-   That is the only edit needed. Set a course to null to keep it on
-   "Pricing on request" while the others show a price.
+   If you change a price, also update the FAQ answer (faq.aPrice above, in
+   both languages), the "offers" in the JSON-LD block at the top of
+   index.html, and the English fallback prices written in index.html.
    ========================================================================== */
 
 window.HALQA_PRICES = {
-  confirmed: false,
   currency: '$',
-  values: {
-    arabic: 12,
-    writing: 12,
-    quran: 10,
-    sirah: 9,
-    day: 9
-  }
+  private: 10,
+  group: 6
+};
+
+/* ==========================================================================
+   NUMBERS FROM YOUR PREPLY PROFILE
+   --------------------------------------------------------------------------
+   Preply cannot be read automatically (it blocks other sites), so these are
+   copied by hand. Every number on the page — the strip under the hero, the
+   Preply card, the About section — is filled in from here, so updating one
+   line here updates all of them. Last copied: 30 October 2026.
+
+   index.html also carries the same numbers as plain text for visitors without
+   JavaScript and for Google; search it for the old value when you change one.
+   ========================================================================== */
+
+window.HALQA_STATS = {
+  rating: '5.0',   /* keep the quotes, so it shows as 5.0 rather than 5 */
+  lessons: 127,
+  reviews: 4,
+  students: 300
 };

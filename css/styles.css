@@ -125,6 +125,11 @@
   /* Opacity of the big Arabic word marks on the course cards */
   --glyph-opacity: 0.55;
 
+  /* The example chat in "How it works" */
+  --chat-bg: #eaf3f1;
+  --bubble-me: #d5f0e1;
+  --bubble-them: #ffffff;
+
   /* Third-party brand colours, used only as backgrounds under white text */
   --whatsapp: #1da851;
   --telegram: #0284c7;
@@ -222,6 +227,10 @@
   --footer-bg: #061518;
 
   --glyph-opacity: 0.8;
+
+  --chat-bg: #0a1d21;
+  --bubble-me: #12443a;
+  --bubble-them: #17333a;
 
   /* A shadow tinted with the brand colour disappears on a dark ground */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -533,7 +542,9 @@ button {
   width: 100%;
 }
 
+/* 40px tall at the least, so it is an easy target for a thumb */
 .btn--sm {
+  min-height: 2.5rem;
   padding: 0.6rem 1.05rem;
   font-size: var(--step--1);
 }
@@ -652,10 +663,11 @@ button {
   line-height: 1;
 }
 
-/* Below 375px the brand, the two toggles and the menu button stop fitting on
-   one line. The Arabic wordmark is the decorative part, so it goes first —
-   it survives on a 375px iPhone, and drops on a 320px screen. */
-@media not all and (min-width: 375px) {
+/* On a narrow phone the brand, the two toggles and the menu button stop
+   fitting on one line now that the language buttons are full-size tap
+   targets. The Arabic wordmark is the decorative part — and the hero repeats
+   it in large type just below — so it is the one that goes. */
+@media not all and (min-width: 420px) {
   .brand__name-ar {
     display: none;
   }
@@ -704,6 +716,8 @@ button {
 }
 
 .lang-toggle button {
+  min-width: 2.5rem;
+  min-height: 2.25rem;
   padding: 0.35rem 0.7rem;
   border: 0;
   background: transparent;
@@ -864,6 +878,52 @@ html:not(.js) .theme-toggle {
   letter-spacing: 0;
 }
 
+/* Typed headline. Once main.js takes over, the full sentence is kept for
+   screen readers and Google but hidden from view, and the typed version
+   shows instead. The first line never wraps and the second never changes,
+   so the headline keeps its height while words come and go — nothing below
+   it jumps. */
+.hero__title.is-typing .hero__title-full {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.hero__typed-line,
+.hero__typed-rest {
+  display: block;
+}
+
+.hero__typed-line {
+  white-space: nowrap;
+}
+
+.typer {
+  color: var(--brand);
+}
+
+/* The caret. steps(1) makes it blink rather than fade. */
+.typer::after {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  margin-inline-start: 0.08em;
+  vertical-align: -0.06em;
+  border-radius: 2px;
+  background: currentColor;
+  animation: caret 1.05s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
 .hero__sub {
   margin-block-start: 1.25rem;
   max-width: 48ch;
@@ -884,10 +944,39 @@ html:not(.js) .theme-toggle {
 /* Portrait */
 .hero__figure {
   position: relative;
+  isolation: isolate;
   margin: 0;
   justify-self: center;
   max-width: 380px;
   width: 100%;
+}
+
+/* The study circle behind the portrait. One full turn takes two minutes,
+   slow enough to read as calm rather than busy. The hero clips anything that
+   spills past the screen edge on a phone. */
+.hero__ring {
+  position: absolute;
+  inset: -16%;
+  z-index: -1;
+  width: 132%;
+  max-width: none;
+  color: var(--brand-500);
+  opacity: 0.55;
+  animation: ring-turn 120s linear infinite;
+}
+
+.hero__ring-seats {
+  fill: var(--brand-500);
+}
+
+.hero__ring-gold {
+  fill: var(--gold);
+}
+
+@keyframes ring-turn {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .hero__portrait {
@@ -912,6 +1001,13 @@ html:not(.js) .theme-toggle {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .hero__rating strong {
@@ -1091,11 +1187,45 @@ html:not(.js) .theme-toggle {
   line-height: 1.3;
 }
 
+.price__main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.3em;
+}
+
 .price strong {
-  display: block;
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
+  color: var(--ink);
+}
+
+.price__sub {
+  display: block;
+  margin-block-start: 0.15rem;
+  font-size: 0.75rem;
+}
+
+/* The larger price in each "Groups & private" panel */
+.price-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+  margin-block-end: 0.75rem;
+  padding: 0.3rem 0.9rem;
+  background: var(--brand-50);
+  border: 1px solid var(--brand-100);
+  border-radius: var(--radius-pill);
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+
+.price-tag strong {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.2;
   color: var(--ink);
 }
 
@@ -1334,6 +1464,248 @@ html:not(.js) .theme-toggle {
   color: var(--text);
 }
 
+/* Steps on the left in a 2×2 grid, the example chat on the right. On a
+   phone the chat follows the steps. */
+.how {
+  display: grid;
+  gap: clamp(1.5rem, 1rem + 2.5vw, 3rem);
+  align-items: center;
+}
+
+/* Without this, the line being typed into the chat's message bar (which
+   never wraps) would widen the chat column letter by letter and squeeze the
+   steps beside it. */
+.how > * {
+  min-width: 0;
+}
+
+@media (min-width: 980px) {
+  .how {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  .how .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11b. Example chat
+   Static by default: the finished conversation. main.js adds .is-animated and
+   replays it message by message.
+   -------------------------------------------------------------------------- */
+
+.chat {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.chat__window {
+  overflow: hidden;
+  background: var(--chat-bg);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.chat__head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.75rem 1rem;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+}
+
+.chat__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+}
+
+.chat__who strong {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.chat__status {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.85;
+  line-height: 1.3;
+}
+
+/* Fixed height, filled from the bottom, the way a real chat scrolls: new
+   messages push the older ones up and out of the top. */
+.chat__log {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  height: 20.5rem;
+  padding: 1rem 0.9rem;
+  overflow: hidden;
+  transition: opacity 0.6s ease;
+}
+
+.chat__log.is-fading {
+  opacity: 0;
+}
+
+.chat__msg {
+  max-width: 84%;
+  padding: 0.55rem 0.8rem;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+  flex: none;
+}
+
+.chat__msg--me {
+  align-self: flex-end;
+  background: var(--bubble-me);
+  border-end-end-radius: 4px;
+}
+
+.chat__msg--them {
+  align-self: flex-start;
+  background: var(--bubble-them);
+  border-end-start-radius: 4px;
+}
+
+.chat__msg.is-new {
+  animation: bubble-in 0.35s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+}
+
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.94);
+  }
+}
+
+/* "typing…" — three dots taking turns to hop */
+.chat__typing {
+  display: inline-flex;
+  gap: 4px;
+  padding-block: 0.8rem;
+}
+
+.chat__typing i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--muted);
+  animation: typing-dot 1.2s ease-in-out infinite;
+}
+
+.chat__typing i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.chat__typing i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes typing-dot {
+  0%,
+  60%,
+  100% {
+    transform: none;
+    opacity: 0.45;
+  }
+  30% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+.chat__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem 0.75rem;
+}
+
+.chat__input {
+  flex: 1;
+  min-width: 0;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0.45rem 0.95rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* The text being typed keeps its newest letters in view: aligned to the
+   end and not allowed to shrink, a long line overflows off the start side
+   and the caret stays visible. */
+.chat__input-text {
+  flex: none;
+}
+
+.chat__input.is-typing {
+  justify-content: flex-end;
+}
+
+.chat__placeholder {
+  color: var(--muted);
+}
+
+.chat__input.is-typing .chat__placeholder {
+  display: none;
+}
+
+.chat__input.is-typing .chat__input-text::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-inline-start: 1px;
+  vertical-align: -0.15em;
+  background: var(--brand);
+  animation: caret 1.05s steps(1) infinite;
+}
+
+.chat__send {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: none;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: #fff;
+}
+
+.chat__send .icon {
+  width: 18px;
+  height: 18px;
+}
+
+[dir='rtl'] .chat__send .icon {
+  transform: scaleX(-1);
+}
+
+.chat__caption {
+  margin-block-start: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-align: center;
+}
+
 /* --------------------------------------------------------------------------
    12. Gallery + lightbox
    -------------------------------------------------------------------------- */
@@ -1501,10 +1873,106 @@ html:not(.js) .theme-toggle {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
 }
 
+/* Preply at a glance: the score, two numbers and the button in one row on
+   a wide screen, stacked on a phone. */
+.preply-card {
+  display: grid;
+  gap: 1.25rem 2rem;
+  align-items: center;
+  margin-block-end: clamp(1.25rem, 1rem + 1vw, 2rem);
+  padding: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-inline-start: 4px solid var(--preply);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+@media (min-width: 820px) {
+  .preply-card {
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+.preply-card__score {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.preply-card__rating {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 2rem + 2vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.preply-card .stars .icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.preply-card__label {
+  display: block;
+  margin-block-start: 0.2rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+/* Always side by side: the two numbers share the row and their labels wrap */
+.preply-card__stats {
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+}
+
+.preply-card__stats > div {
+  flex: 1 1 0;
+  max-width: 11rem;
+}
+
+@media (min-width: 820px) {
+  .preply-card__stats {
+    justify-content: center;
+    padding-inline: 1.5rem;
+    border-inline: 1px solid var(--line);
+  }
+}
+
+/* The number above its label, while the label stays first in the markup so
+   a screen reader hears "Lessons taught on Preply: 127". */
+.preply-card__stats div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end; /* reversed, so this packs the number to the top */
+}
+
+.preply-card__stats dt {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.preply-card__stats dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--brand);
+  font-variant-numeric: tabular-nums;
+}
+
+.preply-card__cta {
+  justify-self: start;
+}
+
 .review {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+  margin: 0; /* a <figure>: drop the browser's 40px side margins */
   padding: 1.4rem;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -1737,6 +2205,22 @@ html:not(.js) .theme-toggle {
   height: 22px;
 }
 
+/* A soft ring that breathes out from the WhatsApp icon every few seconds —
+   the fastest way to reach Anas, so it gets the one moving nudge. */
+.contact__card--pulse .contact__card-icon {
+  animation: pulse-ring 3.2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
 .contact__card strong {
   display: block;
   font-size: 1.0625rem;
@@ -1782,7 +2266,14 @@ html:not(.js) .theme-toggle {
 .footer__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.1rem;
+  column-gap: 1.25rem;
+}
+
+/* Tall enough to tap without hitting the neighbour */
+.footer__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -1792,15 +2283,99 @@ html:not(.js) .theme-toggle {
    anyone who asks for reduced motion.
    -------------------------------------------------------------------------- */
 
-html.js .reveal {
+/* These run as animations, not transitions, with fill-mode `backwards`: the
+   start frame holds during the stagger delay, and once the animation ends
+   the element is back to its own styles — so the hover lift on cards still
+   works afterwards. --i (set by main.js) is the place in the row. */
+html.js .reveal:not(.is-visible) {
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html.js .reveal.is-visible {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 110ms);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+/* A .stagger block stays put and brings its children in one by one */
+html.js .reveal.stagger:not(.is-visible) {
   opacity: 1;
-  transform: none;
+}
+
+html.js .reveal.stagger:not(.is-visible) > * {
+  opacity: 0;
+}
+
+html.js .reveal.stagger.is-visible {
+  animation: none;
+}
+
+html.js .reveal.stagger.is-visible > * {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 110ms);
+}
+
+/* Stars pop in one after another once their card has arrived */
+html.js .reveal.is-visible .stars .icon {
+  animation: star-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 110ms + 350ms + var(--s, 0) * 90ms);
+}
+
+.stars .icon:nth-child(2) {
+  --s: 1;
+}
+.stars .icon:nth-child(3) {
+  --s: 2;
+}
+.stars .icon:nth-child(4) {
+  --s: 3;
+}
+.stars .icon:nth-child(5) {
+  --s: 4;
+}
+
+@keyframes star-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.2) rotate(-30deg);
+  }
+}
+
+/* Arabic that writes itself: a soft-edged mask sweeps from right to left —
+   the direction the pen moves — uncovering the word as if it were being
+   written. Used on the hero wordmark and the word on each course card.
+   Browsers without mask support simply show the word. */
+html.js .ink-write {
+  -webkit-mask-image: linear-gradient(to left, #000 45%, transparent 55%);
+  mask-image: linear-gradient(to left, #000 45%, transparent 55%);
+  -webkit-mask-size: 250% 100%;
+  mask-size: 250% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 0% 0;
+  mask-position: 0% 0;
+}
+
+html.js .hero .ink-write {
+  animation: ink-write 2s 0.3s cubic-bezier(0.45, 0, 0.35, 1) forwards;
+}
+
+html.js .reveal.is-visible .ink-write {
+  animation: ink-write 1.8s cubic-bezier(0.45, 0, 0.35, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 110ms + 300ms);
+}
+
+@keyframes ink-write {
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1816,9 +2391,18 @@ html.js .reveal.is-visible {
     transition-duration: 0.001ms !important;
   }
 
-  html.js .reveal {
-    opacity: 1;
-    transform: none;
+  html.js .reveal,
+  html.js .reveal > * {
+    opacity: 1 !important;
+  }
+
+  html.js .ink-write {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .typer::after {
+    display: none;
   }
 
   .card:hover,

@@ -7,27 +7,20 @@ framework, no CDN — you can open `index.html` in a browser and it works.
 
 ## Before you publish
 
-**1. Prices — nothing to do.** Every course shows *"Pricing on request"*, which
-is how you asked for it. If you ever want real rates on the cards, put them in
-`js/i18n.js` and flip one switch:
+**1. Prices — live.** $10 per lesson one-to-one and $6 per student in a group,
+for lessons booked directly. Both numbers live in `window.HALQA_PRICES` at the
+bottom of `js/i18n.js`. Each course card says which formats it offers with
+`data-formats="private group"` in `index.html`. If you change a price, also
+update the FAQ answer (`faq.aPrice`, both languages), the `offers` in the
+JSON-LD block at the top of `index.html`, and the English fallback prices
+written in `index.html`. Preply shows its own (higher) rate on its site; the
+FAQ says so, so nobody is surprised.
 
-```js
-window.HALQA_PRICES = {
-  confirmed: false,        // ← true turns the prices on
-  currency: '$',
-  values: {
-    arabic: 12,           // ← your real rates, if you ever want them shown
-    writing: 12,
-    quran: 10,
-    sirah: 9,
-    day: 9
-  }
-};
-```
-
-Those numbers are ignored entirely while `confirmed` is `false`, so they cannot
-leak onto the page. Setting a single course to `null` keeps just that one on
-"Pricing on request" when the rest are switched on.
+**Numbers from Preply — one place.** The rating, lesson count, review count
+and "300+ students" all come from `window.HALQA_STATS` in `js/i18n.js`.
+Preply cannot be read automatically, so copy them across by hand every month
+or two. `index.html` also has them as plain text for Google; search for the
+old number there too.
 
 **2. Preply link — done.** Both Preply buttons now point at
 `https://preply.in/ANAS6EN29906995102?ts=17866532`. If it ever changes, it lives
@@ -38,10 +31,10 @@ in one place, `window.HALQA_CONTACT` in `js/i18n.js`, plus a plain fallback
 anywhere on the site. The Seerah card says a weekly session and that you will
 send a suitable time when someone messages you, which is how you work.
 
-**4. The Prophetic Day date — settled.** October 2026, no specific day, phrased
-"a new group opens in October 2026, in shā’ Allāh". If you fix a date later,
-change `now.dayP1` and `now.soonBadge` in `js/i18n.js`, and the `startDate` in
-the JSON-LD block in `index.html`.
+**4. The Prophetic Day date — "opening soon".** No date anywhere. When the
+date is fixed, change `now.soonBadge`, `now.dayP1`, `now.lede` and
+`course.day.m3` in `js/i18n.js` (both languages), the same English text in
+`index.html`, and add a `startDate` to the Prophetic Day course in the JSON-LD.
 
 **5. Photos — six in place.** The five from the old site, plus the Sirah session
 screenshot leading the gallery as a double-width tile at its full 2.08:1 (a 4:3
@@ -177,6 +170,22 @@ can land on something like 979.33px, which is inside neither `max-width: 979px`
 nor `min-width: 980px` — the navigation ends up in a state that matches no rule.
 The `not all` form is the exact complement, so no gap can exist. `js/main.js`
 tests the same query for the same reason.
+
+**Animations.** All in `css/styles.css` (section 17) and `js/main.js`:
+
+- the hero headline types out `hero.typedWords` from `js/i18n.js`, while the
+  full sentence stays in the `<h1>` for Google and screen readers;
+- Arabic words with class `ink-write` (the hero حَلْقَة and the word on each
+  course card) write themselves in from right to left;
+- the ring of dots behind the portrait is the halqa, turning once every two
+  minutes;
+- numbers marked `data-stat` count up the first time they appear;
+- the example chat in "How it works" replays itself while it is on screen
+  (its words are `chat.*` in `js/i18n.js`);
+- cards, steps, reviews and photos arrive one after another (`.stagger`).
+
+The looping ones (typing, chat) pause when they are off screen or the tab is
+hidden. Anyone with "reduce motion" switched on gets the finished, still page.
 
 **The scroll fade-ins are scoped to `html.js`.** If JavaScript fails, nothing is
 stuck invisible — the page just appears without animation. Anyone who has
