@@ -36,7 +36,7 @@
 <!-- ?v= is a version stamp. Change it (here, on the two <script> tags at
      the bottom, and in 404.html) whenever you change the CSS or JS, so
      returning visitors fetch the new files instead of a cached old copy. -->
-<link rel="stylesheet" href="css/styles.css?v=2026-10-30">
+<link rel="stylesheet" href="css/styles.css?v=2026-10-30b">
 
 <script>
   /* Runs before paint: marks that JS is available (the reveal animations are
@@ -150,15 +150,16 @@
     {
       "@type": "Course",
       "name": "Qur'an Recitation and Tajweed for Kids",
-      "description": "Recitation lessons for children aged 6 to 14, with the rules of Tajweed taught by ear and example.",
+      "description": "Recitation lessons for children aged 6 to 14 in the riwāyah of Qālūn ʿan Nāfiʿ, with the rules of Tajweed taught by ear and example. Taught privately or in a small group.",
       "inLanguage": "en",
       "teaches": "Qur'an recitation and Tajweed",
       "provider": { "@id": "https://www.halqa.ly/#org" },
       "offers": {
-        "@type": "Offer",
+        "@type": "AggregateOffer",
         "category": "Paid",
         "priceCurrency": "USD",
-        "price": "10"
+        "lowPrice": "6",
+        "highPrice": "10"
       },
       "hasCourseInstance": {
         "@type": "CourseInstance",
@@ -247,6 +248,14 @@
         },
         {
           "@type": "Question",
+          "name": "Which recitation (riwāyah) do you teach?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Qālūn ʿan Nāfiʿ, the riwāyah most read in Libya. Ḥafṣ ʿan ʿĀṣim, the most widespread riwāyah elsewhere, is not offered for now."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "What do I need for a lesson?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -314,6 +323,9 @@
   <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l2.85 5.94 6.5.88-4.72 4.53 1.17 6.45L12 17.32l-5.8 3.08 1.17-6.45L2.65 9.42l6.5-.88z"/></symbol>
   <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.1L2.6 8.6 12 13.1l9.4-4.5z"/><path d="M6.3 11v4.4c0 1.7 2.55 2.9 5.7 2.9s5.7-1.2 5.7-2.9V11"/></symbol>
   <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.347-.347.52-.52.174-.174.232-.298.347-.497.115-.198.057-.371-.058-.52-.115-.148-.669-1.612-.916-2.207-.245-.595-.49-.51-.67-.51-.174 0-.372-.024-.57-.024-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+  <!-- Preply's own mark, from static.preply.com/ds/icons/rebrand-23-v0/favicon.svg,
+       cropped to the mark. Shown dark on Preply pink, as Preply does. -->
+  <symbol id="i-preply" viewBox="20 31 256 256" fill="currentColor"><path fill-rule="evenodd" d="m209.165 91.413-83.53-51.06c-26.9-16.44-61.43 2.92-61.43 34.45v143.62c0 28.66 16.84 43.46 38.47 43.46 20.29 0 36.9-15.71 38.36-35.62 19.83-2.08 36.19-18.83 35.29-41.52l36.4-22.25c12.88-7.87 19.32-21.16 19.32-34.45 0-13.29-4.52-26.44-22.88-36.63zm-106.49 147.59c-8.61 0-15.58-6.98-15.58-15.58s6.97-15.59 15.58-15.59 15.59 6.98 15.59 15.59-6.98 15.58-15.59 15.58zm50.77-51.97c0 5.88-3.79 16.56-17.81 16.56a38.839 38.839 0 0 0-5.63-7.24 39.338 39.338 0 0 0-7.19-5.71 38.25 38.25 0 0 0-20.14-5.69c-5.09 0-9.94.99-14.38 2.78-.39.16-.83.34-1.21.51v-34.45c0-9.15 7.41-16.56 16.56-16.56h33.24c9.15 0 16.56 7.41 16.56 16.56zm47.35-44.06-24.47 14.96v-4.14c0-21.78-17.66-39.44-39.44-39.44h-33.24c-5.91 0-11.52 1.3-16.56 3.64v-43.19c0-13.66 14.96-22.06 26.62-14.93l87.09 53.24c11.16 6.82 11.16 23.04 0 29.86z"/></symbol>
   <symbol id="i-telegram" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.26-1.91.178-.184 3.147-2.886 3.207-3.14.007-.03.014-.135-.055-.19-.069-.055-.169-.037-.242-.02-.104.024-1.755 1.115-4.954 3.274-.47.322-.897.48-1.277.47-.42-.009-1.23-.238-1.83-.434-.74-.24-1.324-.365-1.273-.767.026-.21.315-.424.867-.643 3.398-1.48 5.664-2.456 6.798-2.927 3.237-1.346 3.91-1.58 4.35-1.588z"/></symbol>
 </svg>
 
@@ -431,32 +443,26 @@
              width="640" height="640"
              alt="Anas, Arabic and Islamic studies teacher" data-i18n-attr="alt:hero.portraitAlt"
              fetchpriority="high" decoding="async">
-        <figcaption class="hero__rating">
-          <svg class="icon" aria-hidden="true" style="width:1.1rem;height:1.1rem;color:var(--gold)"><use href="#i-star"></use></svg>
-          <span>
-            <strong data-stat="rating" data-static>5.0</strong>
-            <span data-i18n="hero.ratingLabel">rated on Preply</span>
-          </span>
-        </figcaption>
       </figure>
 
     </div>
 
     <div class="container">
       <!-- data-stat numbers come from HALQA_STATS in js/i18n.js and count up
-           from zero the first time they scroll into view. -->
+           from zero the first time they scroll into view. Preply's numbers are
+           kept to the Reviews section on purpose, so they are not repeated. -->
       <ul class="trust reveal stagger">
         <li class="trust__item">
           <strong class="trust__value" data-stat="students" data-suffix="+">300+</strong>
           <span class="trust__label" data-i18n="trust.students">Students taught</span>
         </li>
         <li class="trust__item">
-          <strong class="trust__value" data-stat="lessons">127</strong>
-          <span class="trust__label" data-i18n="trust.lessons">Lessons on Preply</span>
+          <strong class="trust__value" data-stat="courses">5</strong>
+          <span class="trust__label" data-i18n="trust.courses">Courses</span>
         </li>
         <li class="trust__item">
-          <strong class="trust__value" data-stat="rating">5.0</strong>
-          <span class="trust__label" data-i18n="trust.rating">Average rating</span>
+          <strong class="trust__value" data-i18n="trust.free">Free</strong>
+          <span class="trust__label" data-i18n="trust.freeLabel">First lesson</span>
         </li>
         <li class="trust__item">
           <strong class="trust__value" data-i18n="trust.native">Native</strong>
@@ -639,15 +645,19 @@
               Patient recitation lessons for children, with the rules of Tajweed taught by ear and by
               example rather than as a list to memorise.
             </p>
+            <p class="card__note">
+              <svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg>
+              <span data-i18n="course.quran.note">Taught in the riwāyah of Qālūn ʿan Nāfiʿ. Ḥafṣ is not offered for now.</span>
+            </p>
             <ul class="card__meta">
               <li><svg class="icon" aria-hidden="true"><use href="#i-level"></use></svg><span data-i18n="course.quran.m1">Ages 6–14</span></li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg><span data-i18n="course.quran.m2">Private</span></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg><span data-i18n="course.quran.m2">Private or group</span></li>
               <li><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg><span data-i18n="course.quran.m3">30–45 min</span></li>
             </ul>
             <div class="card__foot">
-              <p class="price" data-formats="private">
-                <span class="price__main"><strong>$10</strong> <span>per lesson</span></span>
-                <span class="price__sub">One-to-one lessons</span>
+              <p class="price" data-formats="group private">
+                <span class="price__main"><span>From</span> <strong>$6</strong> <span>per lesson</span></span>
+                <span class="price__sub">$10 one-to-one</span>
               </p>
               <a class="btn btn--ghost btn--sm" data-msg="quran"
                  href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20Qur'an%20recitation%20lessons%20for%20children."
@@ -837,13 +847,6 @@
               <div>
                 <strong data-i18n="about.c4">Interactive by default</strong>
                 <span data-i18n="about.c4sub">Boards, images, manuscripts and questions — not a lecture read out loud at you.</span>
-              </div>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-award"></use></svg>
-              <div>
-                <strong data-i18n="about.c5">5.0 on Preply across 127 lessons</strong>
-                <span data-i18n="about.c5sub">Part of more than 300 students taught in total, between online platforms and real classrooms.</span>
               </div>
             </li>
           </ul>
@@ -1050,6 +1053,9 @@
            come from HALQA_STATS in js/i18n.js. -->
       <div class="preply-card reveal">
         <div class="preply-card__score">
+          <span class="preply-mark preply-card__logo" aria-hidden="true">
+            <svg class="icon"><use href="#i-preply"></use></svg>
+          </span>
           <strong class="preply-card__rating" data-stat="rating">5.0</strong>
           <div>
             <div class="stars" role="img" aria-label="5 out of 5">
@@ -1064,7 +1070,7 @@
         </div>
         <dl class="preply-card__stats">
           <div>
-            <dt data-i18n="preply.lessons">Lessons taught on Preply</dt>
+            <dt data-i18n="preply.lessons">Lessons taught</dt>
             <dd data-stat="lessons">127</dd>
           </div>
           <div>
@@ -1074,7 +1080,7 @@
         </dl>
         <a class="btn btn--preply preply-card__cta" data-link="preply" target="_blank" rel="noopener"
            href="https://preply.in/ANAS6EN29906995102?ts=17866532">
-          <svg class="icon" aria-hidden="true"><use href="#i-cap"></use></svg>
+          <svg class="icon" aria-hidden="true"><use href="#i-preply"></use></svg>
           <span data-i18n="reviews.cta">See my Preply profile</span>
         </a>
       </div>
@@ -1224,6 +1230,14 @@
 
         <details class="faq__item">
           <summary class="faq__q">
+            <span data-i18n="faq.qRiwayah">Which recitation (riwāyah) do you teach?</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+          </summary>
+          <p class="faq__a" data-i18n="faq.aRiwayah">Qālūn ʿan Nāfiʿ, the riwāyah most read in Libya. Ḥafṣ ʿan ʿĀṣim, the most widespread riwāyah elsewhere, is not offered for now.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__q">
             <span data-i18n="faq.q4">What do I need for a lesson?</span>
             <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
           </summary>
@@ -1276,7 +1290,7 @@
 
         <a class="contact__card contact__card--pulse" data-msg="general"
            href="https://wa.me/218945244671?text=Assalamu%20alaykum.%20I%20would%20like%20to%20ask%20about%20your%20courses.">
-          <span class="contact__card-icon">
+          <span class="contact__card-icon contact__card-icon--whatsapp">
             <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
           </span>
           <span>
@@ -1286,7 +1300,7 @@
         </a>
 
         <a class="contact__card" data-link="telegram" href="https://t.me/AnasAlnaas" target="_blank" rel="noopener">
-          <span class="contact__card-icon">
+          <span class="contact__card-icon contact__card-icon--telegram">
             <svg class="icon" aria-hidden="true"><use href="#i-telegram"></use></svg>
           </span>
           <span>
@@ -1297,8 +1311,8 @@
 
         <a class="contact__card" data-link="preply" target="_blank" rel="noopener"
            href="https://preply.in/ANAS6EN29906995102?ts=17866532">
-          <span class="contact__card-icon">
-            <svg class="icon" aria-hidden="true"><use href="#i-cap"></use></svg>
+          <span class="contact__card-icon preply-mark">
+            <svg class="icon" aria-hidden="true"><use href="#i-preply"></use></svg>
           </span>
           <span>
             <strong data-i18n="contact.pyTitle">Preply</strong>
@@ -1349,7 +1363,7 @@
   </div>
 </dialog>
 
-<script src="js/i18n.js?v=2026-10-30"></script>
-<script src="js/main.js?v=2026-10-30" defer></script>
+<script src="js/i18n.js?v=2026-10-30b"></script>
+<script src="js/main.js?v=2026-10-30b" defer></script>
 </body>
 </html>

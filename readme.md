@@ -16,8 +16,11 @@ JSON-LD block at the top of `index.html`, and the English fallback prices
 written in `index.html`. Preply shows its own (higher) rate on its site; the
 FAQ says so, so nobody is surprised.
 
-**Numbers from Preply — one place.** The rating, lesson count, review count
-and "300+ students" all come from `window.HALQA_STATS` in `js/i18n.js`.
+**Numbers from Preply — one place, one section.** The rating, lesson count
+and review count come from `window.HALQA_STATS` in `js/i18n.js`, and appear
+only in the Reviews section (its heading and the Preply card) — on purpose,
+so they are not repeated around the page. "300+ students" and "5 courses" in
+the strip under the hero come from the same place.
 Preply cannot be read automatically, so copy them across by hand every month
 or two. `index.html` also has them as plain text for Google; search for the
 old number there too.

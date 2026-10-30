@@ -46,16 +46,16 @@ window.HALQA_I18N = {
     'hero.note':
       'Lessons in English or Arabic · Based in Libya (UTC+2) · Usually replies within a few hours',
     'hero.portraitAlt': 'Anas, Arabic and Islamic studies teacher',
-    'hero.ratingLabel': 'rated on Preply',
     /* The animated headline: "Learn ___ with a teacher beside you", with the
        blank typed out word by word. The full sentence in hero.title above is
        still what Google and screen readers get. */
     'hero.typedBefore': 'Learn',
     'hero.typedWords': ['Arabic', "the Qur'an", 'Tajweed', 'the Seerah ﷺ'],
     'hero.typedAfter': 'with a teacher beside you',
-    'trust.lessons': 'Lessons on Preply',
     'trust.students': 'Students taught',
-    'trust.rating': 'Average rating',
+    'trust.courses': 'Courses',
+    'trust.free': 'Free',
+    'trust.freeLabel': 'First lesson',
     'trust.native': 'Native',
     'trust.nativeLabel': 'Arabic speaker',
 
@@ -109,7 +109,8 @@ window.HALQA_I18N = {
     'course.quran.text':
       'Patient recitation lessons for children, with the rules of Tajweed taught by ear and by example rather than as a list to memorise.',
     'course.quran.m1': 'Ages 6–14',
-    'course.quran.m2': 'Private',
+    'course.quran.m2': 'Private or group',
+    'course.quran.note': 'Taught in the riwāyah of Qālūn ʿan Nāfiʿ. Ḥafṣ is not offered for now.',
     'course.quran.m3': '30–45 min',
 
     'course.sirah.title': 'Seerah of the Prophet ﷺ',
@@ -175,10 +176,6 @@ window.HALQA_I18N = {
     'about.c4': 'Interactive by default',
     'about.c4sub':
       'Boards, images, manuscripts and questions — not a lecture read out loud at you.',
-    /* {rating}, {lessons}, {reviews} and {students} come from HALQA_STATS */
-    'about.c5': '{rating} on Preply across {lessons} lessons',
-    'about.c5sub':
-      'Part of more than {students} students taught in total, between online platforms and real classrooms.',
     'about.figCaption':
       'Teaching الكتابة — the shape of early Kufic script — from an original manuscript.',
     'about.figAlt':
@@ -237,12 +234,13 @@ window.HALQA_I18N = {
 
     /* ---- reviews ---- */
     'reviews.eyebrow': 'From my students',
+    /* {rating}, {lessons} and {reviews} come from HALQA_STATS */
     'reviews.title': '{rating} out of 5 on Preply',
     'reviews.lede': 'Every review below was left by a verified student on Preply.',
     'reviews.verified': 'Verified Preply student',
     'reviews.cta': 'See my Preply profile',
     'preply.ratingLabel': 'Average rating on Preply',
-    'preply.lessons': 'Lessons taught on Preply',
+    'preply.lessons': 'Lessons taught',
     'preply.reviews': 'Verified reviews',
     'review.mak':
       'An excellent teacher, very patient and able to identify areas I struggle with and how I can improve. Highly recommend!',
@@ -272,6 +270,9 @@ window.HALQA_I18N = {
     'faq.qPrice': 'How much do lessons cost?',
     'faq.aPrice':
       '$10 per lesson one-to-one, or $6 per student in a group, and the first lesson is free. These are the prices when you book with me directly on WhatsApp or Telegram; Preply sets its own price on its platform.',
+    'faq.qRiwayah': 'Which recitation (riwāyah) do you teach?',
+    'faq.aRiwayah':
+      'Qālūn ʿan Nāfiʿ, the riwāyah most read in Libya. Ḥafṣ ʿan ʿĀṣim, the most widespread riwāyah elsewhere, is not offered for now.',
     'faq.q4': 'What do I need for a lesson?',
     'faq.a4':
       'A phone or laptop with a stable connection, and something to write in. Any material you need is sent to you before we meet.',
@@ -334,13 +335,13 @@ window.HALQA_I18N = {
     'hero.note':
       'الدروس بالإنجليزية أو العربية · من ليبيا (UTC+2) · الرد عادةً خلال ساعات',
     'hero.portraitAlt': 'أنس، معلّم اللغة العربية والدراسات الإسلامية',
-    'hero.ratingLabel': 'التقييم على Preply',
     'hero.typedBefore': 'تعلّم',
     'hero.typedWords': ['العربية', 'تلاوة القرآن', 'التجويد', 'السيرة النبوية'],
     'hero.typedAfter': 'ومعلّمك إلى جانبك',
-    'trust.lessons': 'درسًا على Preply',
     'trust.students': 'طالبًا',
-    'trust.rating': 'متوسط التقييم',
+    'trust.courses': 'دورات',
+    'trust.free': 'مجاني',
+    'trust.freeLabel': 'الدرس الأول',
     'trust.native': 'أصلي',
     'trust.nativeLabel': 'ناطق بالعربية',
 
@@ -394,7 +395,8 @@ window.HALQA_I18N = {
     'course.quran.text':
       'دروس تلاوة هادئة للأطفال، تُعلَّم فيها أحكام التجويد بالسماع والمحاكاة لا بالحفظ المجرّد.',
     'course.quran.m1': 'من 6 إلى 14 سنة',
-    'course.quran.m2': 'فردي',
+    'course.quran.m2': 'فردي أو مجموعة',
+    'course.quran.note': 'التلاوة برواية قالون عن نافع، ولا نُدرّس رواية حفص في الوقت الحالي.',
     'course.quran.m3': '30–45 دقيقة',
 
     'course.sirah.title': 'السيرة النبوية',
@@ -456,8 +458,6 @@ window.HALQA_I18N = {
     'about.c3sub': 'سيرة النبي ﷺ وتاريخها المحيط بها، تُدرَّس قصةً محفوظًا سياقها.',
     'about.c4': 'تفاعلي بطبعه',
     'about.c4sub': 'سبّورة وصور ومخطوطات وأسئلة — لا محاضرة تُقرأ عليك.',
-    'about.c5': '{rating} على Preply في {lessons} درسًا',
-    'about.c5sub': 'جزء من أكثر من {students} طالب دُرّسوا بين المنصّات والصفوف الحقيقية.',
     'about.figCaption': 'درس الكتابة — شكل الخط الكوفي المبكر — من مخطوط أصلي.',
     'about.figAlt':
       'أنس يُدرّس على شاشة تفاعلية تعرض مخطوطًا قرآنيًا بالخط الكوفي، وطالبان يتابعان',
@@ -516,7 +516,7 @@ window.HALQA_I18N = {
     'reviews.verified': 'طالب موثّق على Preply',
     'reviews.cta': 'اطّلع على ملفي في Preply',
     'preply.ratingLabel': 'متوسط التقييم على Preply',
-    'preply.lessons': 'درسًا على Preply',
+    'preply.lessons': 'درسًا',
     'preply.reviews': 'تقييمات موثّقة',
     'review.mak':
       'معلّم ممتاز، صبور جدًا وقادر على تحديد المواضع التي أجد فيها صعوبة وكيف أتحسّن. أنصح به بشدة!',
@@ -546,6 +546,9 @@ window.HALQA_I18N = {
     'faq.qPrice': 'كم سعر الدروس؟',
     'faq.aPrice':
       '10 دولارات للدرس الفردي، أو 6 دولارات لكل طالب في المجموعة، والدرس الأول مجاني. هذه أسعار الحجز المباشر معي عبر واتساب أو تلغرام؛ أما Preply فيحدّد سعره الخاص على منصّته.',
+    'faq.qRiwayah': 'بأي رواية تُدرّس القرآن؟',
+    'faq.aRiwayah':
+      'برواية قالون عن نافع، وهي الرواية الأكثر قراءةً في ليبيا. أما رواية حفص عن عاصم، الأوسع انتشارًا في غيرها، فلا نُدرّسها في الوقت الحالي.',
     'faq.q4': 'ماذا أحتاج للدرس؟',
     'faq.a4':
       'هاتف أو حاسوب باتصال مستقر، وشيء تكتب فيه. وأي مادة تحتاجها تُرسل إليك قبل اللقاء.',
@@ -643,12 +646,13 @@ window.HALQA_PRICES = {
 };
 
 /* ==========================================================================
-   NUMBERS FROM YOUR PREPLY PROFILE
+   NUMBERS SHOWN ON THE PAGE
    --------------------------------------------------------------------------
-   Preply cannot be read automatically (it blocks other sites), so these are
-   copied by hand. Every number on the page — the strip under the hero, the
-   Preply card, the About section — is filled in from here, so updating one
-   line here updates all of them. Last copied: 30 October 2026.
+   rating, lessons and reviews are from your Preply profile. Preply cannot be
+   read automatically (it blocks other sites), so they are copied by hand —
+   last copied 30 October 2026. They appear only in the Reviews section (its
+   heading and the Preply card), deliberately not repeated elsewhere.
+   students and courses are shown in the strip under the hero.
 
    index.html also carries the same numbers as plain text for visitors without
    JavaScript and for Google; search it for the old value when you change one.
@@ -658,5 +662,6 @@ window.HALQA_STATS = {
   rating: '5.0',   /* keep the quotes, so it shows as 5.0 rather than 5 */
   lessons: 127,
   reviews: 4,
-  students: 300
+  students: 300,
+  courses: 5
 };
